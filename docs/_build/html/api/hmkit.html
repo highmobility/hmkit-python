@@ -1,0 +1,1312 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>hmkit package &#8212; hmkit_python 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="hmkit.autoapi package" href="hmkit.autoapi.html" />
+    <link rel="prev" title="Tutorial" href="../tutorial.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="hmkit.autoapi.html" title="hmkit.autoapi package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../tutorial.html" title="Tutorial"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">hmkit_python 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="hmkit-package">
+<h1>hmkit package<a class="headerlink" href="#hmkit-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hmkit.autoapi.html">hmkit.autoapi package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hmkit.autoapi.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hmkit.autoapi.commands.html">hmkit.autoapi.commands package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.end_parking">hmkit.autoapi.commands.end_parking module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.get_charge_state">hmkit.autoapi.commands.get_charge_state module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.get_homecharger_state">hmkit.autoapi.commands.get_homecharger_state module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.get_parkingbrake_state">hmkit.autoapi.commands.get_parkingbrake_state module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.get_parkingticket">hmkit.autoapi.commands.get_parkingticket module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.getlockstate">hmkit.autoapi.commands.getlockstate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.lockstate">hmkit.autoapi.commands.lockstate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.lockunlockdoors">hmkit.autoapi.commands.lockunlockdoors module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.parkingbrake_state">hmkit.autoapi.commands.parkingbrake_state module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.parkingticket">hmkit.autoapi.commands.parkingticket module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.set_charge_limit">hmkit.autoapi.commands.set_charge_limit module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.set_charge_mode">hmkit.autoapi.commands.set_charge_mode module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.set_charging_timers">hmkit.autoapi.commands.set_charging_timers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.set_parkingbrake_state">hmkit.autoapi.commands.set_parkingbrake_state module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.start_parking">hmkit.autoapi.commands.start_parking module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands.start_stop_charging">hmkit.autoapi.commands.start_stop_charging module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.commands.html#module-hmkit.autoapi.commands">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="hmkit.autoapi.properties.html">hmkit.autoapi.properties package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.properties.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="hmkit.autoapi.properties.component.html">hmkit.autoapi.properties.component package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.component.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.component.html#module-hmkit.autoapi.properties.component.property_component">hmkit.autoapi.properties.component.property_component module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.component.html#module-hmkit.autoapi.properties.component.property_component_failure">hmkit.autoapi.properties.component.property_component_failure module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.component.html#module-hmkit.autoapi.properties.component.property_component_timestamp">hmkit.autoapi.properties.component.property_component_timestamp module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.component.html#module-hmkit.autoapi.properties.component.property_component_value">hmkit.autoapi.properties.component.property_component_value module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.component.html#module-hmkit.autoapi.properties.component">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="hmkit.autoapi.properties.value.html">hmkit.autoapi.properties.value package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.value.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.value.html#module-hmkit.autoapi.properties.value.double_hm">hmkit.autoapi.properties.value.double_hm module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.value.html#module-hmkit.autoapi.properties.value.location">hmkit.autoapi.properties.value.location module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.value.html#module-hmkit.autoapi.properties.value.lock">hmkit.autoapi.properties.value.lock module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.value.html#module-hmkit.autoapi.properties.value.parking_ticketstate">hmkit.autoapi.properties.value.parking_ticketstate module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.value.html#module-hmkit.autoapi.properties.value.position">hmkit.autoapi.properties.value.position module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="hmkit.autoapi.properties.value.html#module-hmkit.autoapi.properties.value">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.properties.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.properties.html#module-hmkit.autoapi.properties.doorlockstate">hmkit.autoapi.properties.doorlockstate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.properties.html#module-hmkit.autoapi.properties.doorposition">hmkit.autoapi.properties.doorposition module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.properties.html#module-hmkit.autoapi.properties.hmproperty">hmkit.autoapi.properties.hmproperty module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.properties.html#module-hmkit.autoapi.properties.propertyvalue_object">hmkit.autoapi.properties.propertyvalue_object module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hmkit.autoapi.properties.html#module-hmkit.autoapi.properties">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hmkit.autoapi.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmkit.autoapi.html#module-hmkit.autoapi.autoapi_dump">hmkit.autoapi.autoapi_dump module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmkit.autoapi.html#module-hmkit.autoapi.command">hmkit.autoapi.command module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmkit.autoapi.html#module-hmkit.autoapi.command_resolver">hmkit.autoapi.command_resolver module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmkit.autoapi.html#module-hmkit.autoapi.command_with_properties">hmkit.autoapi.command_with_properties module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmkit.autoapi.html#module-hmkit.autoapi.identifiers">hmkit.autoapi.identifiers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmkit.autoapi.html#module-hmkit.autoapi.msg_type">hmkit.autoapi.msg_type module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmkit.autoapi.html#module-hmkit.autoapi.property_enumeration">hmkit.autoapi.property_enumeration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hmkit.autoapi.html#module-hmkit.autoapi">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-hmkit.hmkit">
+<span id="hmkit-hmkit-module"></span><h2>hmkit.hmkit module<a class="headerlink" href="#module-hmkit.hmkit" title="Permalink to this headline">¶</a></h2>
+<p>The MIT License</p>
+<p>Copyright (c) 2014- High-Mobility GmbH (<a class="reference external" href="https://high-mobility.com">https://high-mobility.com</a>)</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+<dl class="class">
+<dt id="hmkit.hmkit.HmKit">
+<em class="property">class </em><code class="sig-prename descclassname">hmkit.hmkit.</code><code class="sig-name descname">HmKit</code><span class="sig-paren">(</span><em class="sig-param">snippet</em>, <em class="sig-param">loglevel=20</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.hmkit.HmKit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Main class interface to initialize and access High mobility Python sdk hmkit</p>
+<dl class="method">
+<dt id="hmkit.hmkit.HmKit.certificate_update">
+<code class="sig-name descname">certificate_update</code><span class="sig-paren">(</span><em class="sig-param">snippet</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.hmkit.HmKit.certificate_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses and updates the certificate to  <code class="xref py py-class docutils literal notranslate"><span class="pre">device_certificate</span></code> and  <code class="xref py py-class docutils literal notranslate"><span class="pre">hm_pyc</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>snippet</strong> (<em>bytearray</em>) – device certificate snippet</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.hmkit.HmKit.cmain_thread">
+<code class="sig-name descname">cmain_thread</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.hmkit.HmKit.cmain_thread" title="Permalink to this definition">¶</a></dt>
+<dd><p>thread function dedicated to c thread operations</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.hmkit.HmKit.download_access_certificate">
+<code class="sig-name descname">download_access_certificate</code><span class="sig-paren">(</span><em class="sig-param">token</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.hmkit.HmKit.download_access_certificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pass the Access token to <code class="xref py py-class docutils literal notranslate"><span class="pre">access_certificate</span></code> to download Access Certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>token</strong> (<em>bytearray</em>) – Access Token for device</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.hmkit.HmKit.get_certificate">
+<code class="sig-name descname">get_certificate</code><span class="sig-paren">(</span><em class="sig-param">serial</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.hmkit.HmKit.get_certificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the Access Certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>serial</strong> (<em>bytearray</em>) – Serial Number</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>AccessCertificate() object that contains the received Access certificate</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../source/hmkit.html#hmkit.access_certificate.AccessCertificate" title="hmkit.access_certificate.AccessCertificate">access_certificate.AccessCertificate</a>()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.hmkit.HmKit.get_instance">
+<em class="property">static </em><code class="sig-name descname">get_instance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.hmkit.HmKit.get_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the HmKit instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../source/hmkit.html#hmkit.hmkit.HmKit" title="hmkit.hmkit.HmKit"><code class="xref py py-class docutils literal notranslate"><span class="pre">HmKit</span></code></a>. returns None if not created already.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.hmkit.HmKit.hmkit_exit">
+<code class="sig-name descname">hmkit_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.hmkit.HmKit.hmkit_exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>terminate hmkit. this terminates the cthreads</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.hmkit.HmKit.init_threads">
+<code class="sig-name descname">init_threads</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.hmkit.HmKit.init_threads" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a python thread. which will be deligated for c</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.hmkit.HmKit.set_logging_level">
+<code class="sig-name descname">set_logging_level</code><span class="sig-paren">(</span><em class="sig-param">loglevel=20</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.hmkit.HmKit.set_logging_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>set logging level for logger</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>loglevel</strong> (<em>logging</em>) – python logging level for hmkit logs. logging.DEBUG, 
+logging.INFO, logging.WARNING ,logging.ERROR, logging.CRITICAL</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hmkit.access_certificate">
+<span id="hmkit-access-certificate-module"></span><h2>hmkit.access_certificate module<a class="headerlink" href="#module-hmkit.access_certificate" title="Permalink to this headline">¶</a></h2>
+<p>The MIT License</p>
+<p>Copyright (c) 2014- High-Mobility GmbH (<a class="reference external" href="https://high-mobility.com">https://high-mobility.com</a>)</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+<dl class="class">
+<dt id="hmkit.access_certificate.AccessCertificate">
+<em class="property">class </em><code class="sig-prename descclassname">hmkit.access_certificate.</code><code class="sig-name descname">AccessCertificate</code><span class="sig-paren">(</span><em class="sig-param">hmkit</em>, <em class="sig-param">cert=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class handles access certificate download, parsing and get apis.</p>
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.GAINING_PUBLIC_KEY_END">
+<code class="sig-name descname">GAINING_PUBLIC_KEY_END</code><em class="property"> = 86</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.GAINING_PUBLIC_KEY_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.GAINING_PUBLIC_KEY_START">
+<code class="sig-name descname">GAINING_PUBLIC_KEY_START</code><em class="property"> = 23</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.GAINING_PUBLIC_KEY_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.ISSUER_END">
+<code class="sig-name descname">ISSUER_END</code><em class="property"> = 4</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.ISSUER_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.ISSUER_START">
+<code class="sig-name descname">ISSUER_START</code><em class="property"> = 1</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.ISSUER_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.PERMISSIONS_START">
+<code class="sig-name descname">PERMISSIONS_START</code><em class="property"> = 98</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.PERMISSIONS_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.PERMISSION_SIZE_POS">
+<code class="sig-name descname">PERMISSION_SIZE_POS</code><em class="property"> = 97</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.PERMISSION_SIZE_POS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.SER_GAINING_END">
+<code class="sig-name descname">SER_GAINING_END</code><em class="property"> = 22</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.SER_GAINING_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.SER_GAINING_START">
+<code class="sig-name descname">SER_GAINING_START</code><em class="property"> = 14</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.SER_GAINING_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.SER_PROVIDING_END">
+<code class="sig-name descname">SER_PROVIDING_END</code><em class="property"> = 13</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.SER_PROVIDING_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.SER_PROVIDING_START">
+<code class="sig-name descname">SER_PROVIDING_START</code><em class="property"> = 5</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.SER_PROVIDING_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.SIGNATURE_SIZE">
+<code class="sig-name descname">SIGNATURE_SIZE</code><em class="property"> = 64</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.SIGNATURE_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.VALIDITY_END_DATE_END">
+<code class="sig-name descname">VALIDITY_END_DATE_END</code><em class="property"> = 96</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.VALIDITY_END_DATE_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.VALIDITY_END_DATE_START">
+<code class="sig-name descname">VALIDITY_END_DATE_START</code><em class="property"> = 92</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.VALIDITY_END_DATE_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.VALIDITY_START_DATE_END">
+<code class="sig-name descname">VALIDITY_START_DATE_END</code><em class="property"> = 91</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.VALIDITY_START_DATE_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.VALIDITY_START_DATE_START">
+<code class="sig-name descname">VALIDITY_START_DATE_START</code><em class="property"> = 87</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.VALIDITY_START_DATE_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.VERSION_POS">
+<code class="sig-name descname">VERSION_POS</code><em class="property"> = 0</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.VERSION_POS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.download_access_certificate">
+<code class="sig-name descname">download_access_certificate</code><span class="sig-paren">(</span><em class="sig-param">access_token</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.download_access_certificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads access ceritifcate from the hmserver with the access token passed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>access_token</strong> (<em>bytearray</em>) – access token copied from high-mobility</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.get_end_date">
+<code class="sig-name descname">get_end_date</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.get_end_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the end date of the access certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>enddate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.get_gaining_serial_number">
+<code class="sig-name descname">get_gaining_serial_number</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.get_gaining_serial_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>parses the gaining serial number from access certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>serial number</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bytearray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.get_issuer">
+<code class="sig-name descname">get_issuer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.get_issuer" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the Certificate Issuer name from access certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Certificate Issuer name 4 bytes</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bytearray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.get_permissions">
+<code class="sig-name descname">get_permissions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.get_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns permissions from access certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>capability permissions</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>hmkit.autoapi.properties.permissions.Permissions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.get_providing_serial_number">
+<code class="sig-name descname">get_providing_serial_number</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.get_providing_serial_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>parses the providing serial number from access certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>serial number</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bytearray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.get_raw_certiticate">
+<code class="sig-name descname">get_raw_certiticate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.get_raw_certiticate" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the parsed and base64 decoded certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>raw access certificate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bytearray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.get_start_date">
+<code class="sig-name descname">get_start_date</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.get_start_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the start date of the access certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>startdate</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>datetime.datetime</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.get_vehicle_pubkey">
+<code class="sig-name descname">get_vehicle_pubkey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.get_vehicle_pubkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the vehicle public key from access certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>vehicle public key</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bytearray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.get_version">
+<code class="sig-name descname">get_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.get_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the certificate version from access certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>certificate version number</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.is_expired">
+<code class="sig-name descname">is_expired</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.is_expired" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks and returns expiry of the access certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Certificate date expiry status</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>True/False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.is_not_valid_yet">
+<code class="sig-name descname">is_not_valid_yet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.is_not_valid_yet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks validity start of the access certificate. Raspberry device must be set with correct time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bool indicates if the certificate is not valid yet, but will be in the future.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>True/False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.parse_decoded_certiticate">
+<code class="sig-name descname">parse_decoded_certiticate</code><span class="sig-paren">(</span><em class="sig-param">cert</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.parse_decoded_certiticate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hmkit.access_certificate.AccessCertificate.print_access_certificate">
+<code class="sig-name descname">print_access_certificate</code><span class="sig-paren">(</span><em class="sig-param">accesscertf</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.print_access_certificate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.access_certificate.AccessCertificate.url">
+<code class="sig-name descname">url</code><em class="property"> = 'https://sandbox.api.high-mobility.com/v1/'</em><a class="headerlink" href="#hmkit.access_certificate.AccessCertificate.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hmkit.bluetooth">
+<span id="hmkit-bluetooth-module"></span><h2>hmkit.bluetooth module<a class="headerlink" href="#module-hmkit.bluetooth" title="Permalink to this headline">¶</a></h2>
+<p>The MIT License</p>
+<p>Copyright (c) 2014- High-Mobility GmbH (<a class="reference external" href="https://high-mobility.com">https://high-mobility.com</a>)</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+<dl class="class">
+<dt id="hmkit.bluetooth.Bluetooth">
+<em class="property">class </em><code class="sig-prename descclassname">hmkit.bluetooth.</code><code class="sig-name descname">Bluetooth</code><span class="sig-paren">(</span><em class="sig-param">pyc</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.bluetooth.Bluetooth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>handles bluetooth advertisements control, callbacks registerations, connections</p>
+<dl class="method">
+<dt id="hmkit.bluetooth.Bluetooth.py_cb_command_incoming">
+<code class="sig-name descname">py_cb_command_incoming</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.bluetooth.Bluetooth.py_cb_command_incoming" title="Permalink to this definition">¶</a></dt>
+<dd><p>callback for bluetooh incoming command message. Callback forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>bytearray</em>) – received message</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.bluetooth.Bluetooth.py_cb_command_response">
+<code class="sig-name descname">py_cb_command_response</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.bluetooth.Bluetooth.py_cb_command_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>callback for bluetooth received responses. Callback forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>bytearray</em>) – received message</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.bluetooth.Bluetooth.py_cb_entered_proximity">
+<code class="sig-name descname">py_cb_entered_proximity</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.bluetooth.Bluetooth.py_cb_entered_proximity" title="Permalink to this definition">¶</a></dt>
+<dd><p>callback for bluetooth connection. Callback forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">broadcaster</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>bytearray</em>) – received message</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.bluetooth.Bluetooth.py_cb_exited_proximity">
+<code class="sig-name descname">py_cb_exited_proximity</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.bluetooth.Bluetooth.py_cb_exited_proximity" title="Permalink to this definition">¶</a></dt>
+<dd><p>callback for bluetooth disconnection. Callback forwarded to <code class="xref py py-class docutils literal notranslate"><span class="pre">broadcaster</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>bytearray</em>) – received message</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.bluetooth.Bluetooth.reg_callbacks">
+<code class="sig-name descname">reg_callbacks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.bluetooth.Bluetooth.reg_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>registers own callback methods to python-c interface module</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.bluetooth.Bluetooth.startBroadcasting">
+<code class="sig-name descname">startBroadcasting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.bluetooth.Bluetooth.startBroadcasting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start Bluetooth Advertisement to seek connection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.bluetooth.Bluetooth.stopBroadcasting">
+<code class="sig-name descname">stopBroadcasting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.bluetooth.Bluetooth.stopBroadcasting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop Bluetooth Advertisement</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hmkit.broadcaster">
+<span id="hmkit-broadcaster-module"></span><h2>hmkit.broadcaster module<a class="headerlink" href="#module-hmkit.broadcaster" title="Permalink to this headline">¶</a></h2>
+<p>The MIT License</p>
+<p>Copyright (c) 2014- High-Mobility GmbH (<a class="reference external" href="https://high-mobility.com">https://high-mobility.com</a>)</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+<dl class="class">
+<dt id="hmkit.broadcaster.Broadcaster">
+<em class="property">class </em><code class="sig-prename descclassname">hmkit.broadcaster.</code><code class="sig-name descname">Broadcaster</code><a class="headerlink" href="#hmkit.broadcaster.Broadcaster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>handles bluetooth connections and disconnections</p>
+<dl class="method">
+<dt id="hmkit.broadcaster.Broadcaster.connected">
+<code class="sig-name descname">connected</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.broadcaster.Broadcaster.connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets called for bluetooth connection. Invokes connected method of <code class="xref py py-class docutils literal notranslate"><span class="pre">BroadcastListener</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>bytearray</em>) – received message</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.broadcaster.Broadcaster.disconnected">
+<code class="sig-name descname">disconnected</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.broadcaster.Broadcaster.disconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets called for bluetooth disconnection. Invokes disconnected method of <code class="xref py py-class docutils literal notranslate"><span class="pre">BroadcastListener</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>bytearray</em>) – received message</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.broadcaster.Broadcaster.is_connected">
+<code class="sig-name descname">is_connected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.broadcaster.Broadcaster.is_connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hmkit.broadcaster.Broadcaster.set_listener">
+<code class="sig-name descname">set_listener</code><span class="sig-paren">(</span><em class="sig-param">broadcastlistener</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.broadcaster.Broadcaster.set_listener" title="Permalink to this definition">¶</a></dt>
+<dd><p>setter for <code class="xref py py-class docutils literal notranslate"><span class="pre">BroadcastListener</span></code>. Connection Events received are relayed to broadcastlistener instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>broadcastlistener</strong> (<em>broadcastlistener</em>) – <code class="xref py py-class docutils literal notranslate"><span class="pre">BroadcastListener</span></code> object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="hmkit-broadcasterlistener-module">
+<h2>hmkit.broadcasterlistener module<a class="headerlink" href="#hmkit-broadcasterlistener-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-hmkit.broadcastlistener">
+<span id="hmkit-broadcastlistener-module"></span><h2>hmkit.broadcastlistener module<a class="headerlink" href="#module-hmkit.broadcastlistener" title="Permalink to this headline">¶</a></h2>
+<p>The MIT License</p>
+<p>Copyright (c) 2014- High-Mobility GmbH (<a class="reference external" href="https://high-mobility.com">https://high-mobility.com</a>)</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+<dl class="class">
+<dt id="hmkit.broadcastlistener.BroadcastListener">
+<em class="property">class </em><code class="sig-prename descclassname">hmkit.broadcastlistener.</code><code class="sig-name descname">BroadcastListener</code><a class="headerlink" href="#hmkit.broadcastlistener.BroadcastListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Abstract base class for broadcastlistener. Defines the blue print for broadcastlistening.
+Class and methods to be implemented by the app as defined here.</p>
+<dl class="method">
+<dt id="hmkit.broadcastlistener.BroadcastListener.connected">
+<em class="property">abstract </em><code class="sig-name descname">connected</code><span class="sig-paren">(</span><em class="sig-param">link</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.broadcastlistener.BroadcastListener.connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback for bluetooth connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Link</strong> (<em>link</em>) – <code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code> object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.broadcastlistener.BroadcastListener.disconnected">
+<em class="property">abstract </em><code class="sig-name descname">disconnected</code><span class="sig-paren">(</span><em class="sig-param">link</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.broadcastlistener.BroadcastListener.disconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback for bluetooth disconnection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Link</strong> (<em>link</em>) – <code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code> object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.broadcastlistener.BroadcastListener.state_changed">
+<em class="property">abstract </em><code class="sig-name descname">state_changed</code><span class="sig-paren">(</span><em class="sig-param">state</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.broadcastlistener.BroadcastListener.state_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place holder api. Callback for bluetooth connection changes (TODO)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>state</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hmkit.device_certificate">
+<span id="hmkit-device-certificate-module"></span><h2>hmkit.device_certificate module<a class="headerlink" href="#module-hmkit.device_certificate" title="Permalink to this headline">¶</a></h2>
+<p>The MIT License</p>
+<p>Copyright (c) 2014- High-Mobility GmbH (<a class="reference external" href="https://high-mobility.com">https://high-mobility.com</a>)</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+<dl class="class">
+<dt id="hmkit.device_certificate.DeviceCertificate">
+<em class="property">class </em><code class="sig-prename descclassname">hmkit.device_certificate.</code><code class="sig-name descname">DeviceCertificate</code><span class="sig-paren">(</span><em class="sig-param">hmkit</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class handles device certificate parsing and provides getters for various parameters</p>
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.APPID_END">
+<code class="sig-name descname">APPID_END</code><em class="property"> = 15</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.APPID_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.APPID_START">
+<code class="sig-name descname">APPID_START</code><em class="property"> = 4</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.APPID_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.ISSUER_END">
+<code class="sig-name descname">ISSUER_END</code><em class="property"> = 3</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.ISSUER_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.ISSUER_START">
+<code class="sig-name descname">ISSUER_START</code><em class="property"> = 0</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.ISSUER_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.PUBKEY_END">
+<code class="sig-name descname">PUBKEY_END</code><em class="property"> = 88</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.PUBKEY_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.PUBKEY_START">
+<code class="sig-name descname">PUBKEY_START</code><em class="property"> = 25</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.PUBKEY_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.SER_END">
+<code class="sig-name descname">SER_END</code><em class="property"> = 25</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.SER_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.SER_START">
+<code class="sig-name descname">SER_START</code><em class="property"> = 16</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.SER_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.SIGN_END">
+<code class="sig-name descname">SIGN_END</code><em class="property"> = 152</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.SIGN_END" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.SIGN_START">
+<code class="sig-name descname">SIGN_START</code><em class="property"> = 89</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.SIGN_START" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hmkit.device_certificate.DeviceCertificate.devCertf">
+<code class="sig-name descname">devCertf</code><em class="property"> = bytearray(b'')</em><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.devCertf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hmkit.device_certificate.DeviceCertificate.get_app_identifier">
+<code class="sig-name descname">get_app_identifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.get_app_identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>parses the appllication id from device certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>application id</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bytearray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.device_certificate.DeviceCertificate.get_devSerialNum">
+<code class="sig-name descname">get_devSerialNum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.get_devSerialNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>parses the device serial number from device certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>serial number</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bytearray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.device_certificate.DeviceCertificate.get_issuer_pubkey">
+<code class="sig-name descname">get_issuer_pubkey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.get_issuer_pubkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>parses the issuer public key from device certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>issuer public key</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bytearray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.device_certificate.DeviceCertificate.update_devcertf">
+<code class="sig-name descname">update_devcertf</code><span class="sig-paren">(</span><em class="sig-param">devcert</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.device_certificate.DeviceCertificate.update_devcertf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the decoded device certificate and parses it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>devcert</strong> (<em>bytearray</em>) – decoded device certificate from the copied snippet from high-mobility server</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h2>hmkit.hmkit module<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-hmkit.hmkit"></span><p>The MIT License</p>
+<p>Copyright (c) 2014- High-Mobility GmbH (<a class="reference external" href="https://high-mobility.com">https://high-mobility.com</a>)</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">hmkit.hmkit.</code><code class="sig-name descname">HmKit</code><span class="sig-paren">(</span><em class="sig-param">snippet</em>, <em class="sig-param">loglevel=20</em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Main class interface to initialize and access High mobility Python sdk hmkit</p>
+<dl class="method">
+<dt>
+<code class="sig-name descname">certificate_update</code><span class="sig-paren">(</span><em class="sig-param">snippet</em><span class="sig-paren">)</span></dt>
+<dd><p>Parses and updates the certificate to  <code class="xref py py-class docutils literal notranslate"><span class="pre">device_certificate</span></code> and  <code class="xref py py-class docutils literal notranslate"><span class="pre">hm_pyc</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>snippet</strong> (<em>bytearray</em>) – device certificate snippet</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">cmain_thread</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>thread function dedicated to c thread operations</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">download_access_certificate</code><span class="sig-paren">(</span><em class="sig-param">token</em><span class="sig-paren">)</span></dt>
+<dd><p>Pass the Access token to <code class="xref py py-class docutils literal notranslate"><span class="pre">access_certificate</span></code> to download Access Certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>token</strong> (<em>bytearray</em>) – Access Token for device</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">get_certificate</code><span class="sig-paren">(</span><em class="sig-param">serial</em><span class="sig-paren">)</span></dt>
+<dd><p>returns the Access Certificate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>serial</strong> (<em>bytearray</em>) – Serial Number</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>AccessCertificate() object that contains the received Access certificate</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../source/hmkit.html#hmkit.access_certificate.AccessCertificate" title="hmkit.access_certificate.AccessCertificate">access_certificate.AccessCertificate</a>()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">static </em><code class="sig-name descname">get_instance</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>get the HmKit instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../source/hmkit.html#hmkit.hmkit.HmKit" title="hmkit.hmkit.HmKit"><code class="xref py py-class docutils literal notranslate"><span class="pre">HmKit</span></code></a>. returns None if not created already.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">hmkit_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>terminate hmkit. this terminates the cthreads</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">init_threads</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>create a python thread. which will be deligated for c</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">set_logging_level</code><span class="sig-paren">(</span><em class="sig-param">loglevel=20</em><span class="sig-paren">)</span></dt>
+<dd><p>set logging level for logger</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>loglevel</strong> (<em>logging</em>) – python logging level for hmkit logs. logging.DEBUG, 
+logging.INFO, logging.WARNING ,logging.ERROR, logging.CRITICAL</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hmkit.link">
+<span id="hmkit-link-module"></span><h2>hmkit.link module<a class="headerlink" href="#module-hmkit.link" title="Permalink to this headline">¶</a></h2>
+<p>The MIT License</p>
+<p>Copyright (c) 2014- High-Mobility GmbH (<a class="reference external" href="https://high-mobility.com">https://high-mobility.com</a>)</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+<dl class="class">
+<dt id="hmkit.link.Link">
+<em class="property">class </em><code class="sig-prename descclassname">hmkit.link.</code><code class="sig-name descname">Link</code><span class="sig-paren">(</span><em class="sig-param">pyc</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.link.Link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class handles data communication with the bluetooth connected link</p>
+<dl class="method">
+<dt id="hmkit.link.Link.cb_command_incoming">
+<code class="sig-name descname">cb_command_incoming</code><span class="sig-paren">(</span><em class="sig-param">cmd</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.link.Link.cb_command_incoming" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback, Incoming command Data received from the bluetooth connected link is forwarded here,
+That is again forwarded to the registered linklistener.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cmd</strong> (<em>bytearray</em>) – Incoming command bytearray</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.link.Link.cb_command_response">
+<code class="sig-name descname">cb_command_response</code><span class="sig-paren">(</span><em class="sig-param">cmd</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.link.Link.cb_command_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback, Incoming response Data received from the bluetooth connected link is forwarded here,
+That is again forwarded to the registered linklistener.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cmd</strong> (<em>bytearray</em>) – Incoming response bytearray</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.link.Link.sendcommand">
+<code class="sig-name descname">sendcommand</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.link.Link.sendcommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>send the message to the bluetooth connected link</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>bytearray</em>) – data bytearray to be sent through bluetooth</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.link.Link.set_listener">
+<code class="sig-name descname">set_listener</code><span class="sig-paren">(</span><em class="sig-param">linklistener</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.link.Link.set_listener" title="Permalink to this definition">¶</a></dt>
+<dd><p>setter for <code class="xref py py-class docutils literal notranslate"><span class="pre">LinkListener</span></code>. Data received from connected link are relayed to linklistener instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>linklistener</strong> (<em>linklistener</em>) – <code class="xref py py-class docutils literal notranslate"><span class="pre">LinkListener</span></code> object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.link.Link.state_changed">
+<code class="sig-name descname">state_changed</code><span class="sig-paren">(</span><em class="sig-param">state</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.link.Link.state_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>[TODO] Callback, Incoming response Data received from the bluetooth connected link is forwarded here,
+That is again forwarded to the registered linklistener.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> – change in connected link state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hmkit.linklistener">
+<span id="hmkit-linklistener-module"></span><h2>hmkit.linklistener module<a class="headerlink" href="#module-hmkit.linklistener" title="Permalink to this headline">¶</a></h2>
+<p>The MIT License</p>
+<p>Copyright (c) 2014- High-Mobility GmbH (<a class="reference external" href="https://high-mobility.com">https://high-mobility.com</a>)</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+<dl class="class">
+<dt id="hmkit.linklistener.LinkListener">
+<em class="property">class </em><code class="sig-prename descclassname">hmkit.linklistener.</code><code class="sig-name descname">LinkListener</code><a class="headerlink" href="#hmkit.linklistener.LinkListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Abstract base class for linklistener. Defines the blue print for linklistening.
+Class and methods to be implemented by the app as defined here.</p>
+<dl class="method">
+<dt id="hmkit.linklistener.LinkListener.command_incoming">
+<em class="property">abstract </em><code class="sig-name descname">command_incoming</code><span class="sig-paren">(</span><em class="sig-param">link</em>, <em class="sig-param">cmd</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.linklistener.LinkListener.command_incoming" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract Method, to be implemented by the App
+Callback for incoming commands received from bluetooth link.
+Change in States will be received in this callback</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Link</strong> (<em>link</em>) – <code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code> object</p></li>
+<li><p><strong>cmd</strong> (<em>bytearray</em>) – data received</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hmkit.linklistener.LinkListener.command_response">
+<em class="property">abstract </em><code class="sig-name descname">command_response</code><span class="sig-paren">(</span><em class="sig-param">link</em>, <em class="sig-param">cmd</em><span class="sig-paren">)</span><a class="headerlink" href="#hmkit.linklistener.LinkListener.command_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract Method, to be implemented by the App
+Callback for command response received from bluetooth link
+Usually reflects Acknowledgements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Link</strong> (<em>link</em>) – <code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code> object</p></li>
+<li><p><strong>cmd</strong> (<em>bytearray</em>) – data received</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hmkit">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-hmkit" title="Permalink to this headline">¶</a></h2>
+<p>The MIT License</p>
+<p>Copyright (c) 2014- High-Mobility GmbH (<a class="reference external" href="https://high-mobility.com">https://high-mobility.com</a>)</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">hmkit package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-hmkit.hmkit">hmkit.hmkit module</a></li>
+<li><a class="reference internal" href="#module-hmkit.access_certificate">hmkit.access_certificate module</a></li>
+<li><a class="reference internal" href="#module-hmkit.bluetooth">hmkit.bluetooth module</a></li>
+<li><a class="reference internal" href="#module-hmkit.broadcaster">hmkit.broadcaster module</a></li>
+<li><a class="reference internal" href="#hmkit-broadcasterlistener-module">hmkit.broadcasterlistener module</a></li>
+<li><a class="reference internal" href="#module-hmkit.broadcastlistener">hmkit.broadcastlistener module</a></li>
+<li><a class="reference internal" href="#module-hmkit.device_certificate">hmkit.device_certificate module</a></li>
+<li><a class="reference internal" href="#id1">hmkit.hmkit module</a></li>
+<li><a class="reference internal" href="#module-hmkit.link">hmkit.link module</a></li>
+<li><a class="reference internal" href="#module-hmkit.linklistener">hmkit.linklistener module</a></li>
+<li><a class="reference internal" href="#module-hmkit">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../tutorial.html"
+                        title="previous chapter">Tutorial</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="hmkit.autoapi.html"
+                        title="next chapter">hmkit.autoapi package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/hmkit.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="hmkit.autoapi.html" title="hmkit.autoapi package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../tutorial.html" title="Tutorial"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">hmkit_python 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, high-mobility.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
+    </div>
+  </body>
+</html>
