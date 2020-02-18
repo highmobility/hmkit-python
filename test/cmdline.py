@@ -332,13 +332,6 @@ if __name__== "__main__":
     "N2q9HV421SvfLClnNhaYK1dAcKs3LwDAIOTKhUX4dZbIoonHxfz2614r/ZuMCw9TwjQPHt4MC5LeFEi9wrf5nw=="], logging.DEBUG)
 
 
-    '''
-    # PorsPyNew, PyAppNewDev
-    hmkit = hmkit.HmKit(["dGVzdLxdj8tx4+FM0k0aH+VuhOKvDDKKnQjCBuJav9bWmoKrloyPFTVsJpq1jdUk15qwATW3PRE0+H4nXSLDq8yUfWJe93E/ZLhdu2JLTtbiOZV97nQ/V0TjOrpG0aYzlWv7IMTMviaG3hXmMUWULl4JPtcyZmJKz+nQslNa/pbL4UGwC4FSsON3ByqmomOPWtun5RBlt7oF",
-  "M0OyKeuMtteMUoqCqvhr0GH0kUGFMJDrE4FgDePvkQ8=",
-  "uza9JMVq1hvtMITY1QU9ijSD5rwwpWoTi+AK3aTudOIHcVeb0r/SxlAVaW/59zsaqEb5X5ZK6aaA+QkVnuJN6g=="], logging.DEBUG)
-    '''
-
     # Download Access Certificate with the token
     try:
         hmkit.get_instance().download_access_certificate(b"1b621122-e098-405b-8614-494bb9d8568c") # Prod: PyJanCayenne, App: PyJanApp
