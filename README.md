@@ -4,7 +4,7 @@ The HMKit Python SDK makes it easy to work with car data using the HIGH MOBILITY
 
 The library is designed to give IOT developers simple access to High Mobility's systems, by handling all the communication protocols, authentication flows and other security related components.
 
-Hmkit Python bluetooth SDK has been tested on Raspbian Pi Zero W and Pi 3 Model B+
+Hmkit Python bluetooth SDK has been tested on Raspberry Pi variants Zero W, Model B and Model B+.
 
 ## Getting started
 
@@ -25,9 +25,11 @@ Set Python 3.7 as default in alternatives.
 If Python 3.7 is not default:
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.7 2
 
-sudo apt-get install python3.7-dev
-sudo apt install python3-pip
-pip3 install pytz
+#sudo apt-get install python3.7-dev
+#sudo apt-get install libglib2.0-dev
+#sudo apt-get install libsqlite3-dev
+#sudo apt-get install libssl-dev
+
 ```
 
 ## Integration
@@ -57,7 +59,7 @@ $./test/cmdline.py
 ```
 This command line test app provides test commands to test some autoapi commands.
 From Emulator connect to the Device through Bluetooth(symbol at the left bottom corner) 
-Pi zero device need internet access to be able to download Access Certificate.
+Raspberry Pi device need internet access to be able to download Access Certificate.
 
 ## Contributing
 

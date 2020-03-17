@@ -326,15 +326,12 @@ if __name__== "__main__":
 
     # Initialise with HMKit class with a Device Certificate and private key. To start with
     # this can accept Base64 strings straight from the Developer Center
-
-    hmkit = hmkit.HmKit(["dGVzdEKrP198cTN+MvVFftuSBAf1wsTgEQwVb+PHfLfLrah0h3V/qCUuNL4FiN18PZ+nyYwobeH2zf6XDEIsALUNaOe2CQkkNrrDdRuNXVuiPC68aJstrdp7x7YpTZaI7/lqzqn3Syi4VRpUORYBT7P1OSMppco3onJrrSD+R+p41Ix4gy9lWD3gwCauQFTwf9RqkUVVyPUx",
-    "fBkTd/qZciyyOQHMw0GpERDlhhFPObVzbKu1i+DC0m0=",
-    "N2q9HV421SvfLClnNhaYK1dAcKs3LwDAIOTKhUX4dZbIoonHxfz2614r/ZuMCw9TwjQPHt4MC5LeFEi9wrf5nw=="], logging.DEBUG)
-
-
+    hmkit = hmkit.HmKit(["dGVzdORiDH7GlIqfioiQtliOMwlbcQYBAodKLGqyK1Gr+IGLduFGGvewjh9nkFclZpdns0TNYj6ZkMK8BrscToIPd3Mfu1hg3aVJKy7XQNictPvoufpSXIQNpbyUDTTiAUtCBs3cEQY+SRqcttfV575VUbqM6s+tCLFoQ2RgPoIR/Hi/XnXh/8qUGayBJc2MIckQ2s6+7uRb", "no7qFXL6JtlMyKph9Xp6BaIvxae2cHj210M5jvJJhus=", "N2q9HV421SvfLClnNhaYK1dAcKs3LwDAIOTKhUX4dZbIoonHxfz2614r/ZuMCw9TwjQPHt4MC5LeFEi9wrf5nw=="], logging.DEBUG)
+ 
     # Download Access Certificate with the token
     try:
-        hmkit.get_instance().download_access_certificate(b"1b621122-e098-405b-8614-494bb9d8568c") # Prod: PyJanCayenne, App: PyJanApp
+        hmkit.get_instance().download_access_certificate(b"798fb1d0-fdda-49c7-b2bc-da251c5d618d")
+
     except Exception as e:
         # Handle the error
         log.critical("Error in Access certicate download " + str(e.args[0]))
@@ -353,8 +350,8 @@ if __name__== "__main__":
     # set Broadcast listener for BT broadcast events
     hmkit.bluetooth.broadcaster.set_listener(broadcastListener)
 
-    # Start BLE broadcasting/advertising
-    hmkit.bluetooth.startBroadcasting()
+    # Start BLE broadcasting/advertising, hmkit-core does it during init
+    #hmkit.bluetooth.startBroadcasting()
 
     #hmkit.bluetooth.stopBroadcasting()
 
