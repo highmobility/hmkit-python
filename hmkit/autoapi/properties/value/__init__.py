@@ -29,3 +29,8 @@ from .lock import Lock
 from .parking_ticketstate import ParkingTicketState
 from .position import Position
 from .start_stop import StartStop
+from .pricing_type import PricingType
+from .homecharge_authmechanism import HomeChargerAuthMechanism
+from .homecharge_chargestatus import HomeChargerStatus
+from .wifi_hotspot_security import WifiHotspotSecurity
+from .fatigue_level import FatigueLevel

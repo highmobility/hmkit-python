@@ -21,13 +21,31 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
-from .bit_location import BitLocation
-from .doorposition import DoorPosition
-from .permission import Permission
-#from .propertyvalue_object import PropertyValueObject
-from .capability import Capability
-from .doorlockstate import DoorLockSate
-from .hmproperty import HmProperty
-from .permission_location import PermissionType, PermissionLocation
-from .permissions import Permissions
-from .homecharge_tariff import HomeChargeTariff
+
+import  base64
+import  json
+import  codecs
+from .. import identifiers
+from .. import msg_type, property_enumeration, command_with_properties
+import hmkit.autoapi
+from hmkit.autoapi.identifiers import Identifiers
+import hmkit.autoapi.msg_type
+import logging
+
+log = logging.getLogger('hmkit.autoapi')
+
+class GetGasFlapState(command_with_properties.CommandWithProperties):
+    """
+    Constructs Get Gas Flap State message
+    """
+    def __init__(self):
+        """
+        Constructs Get Gas Flap State message
+
+        :param None:
+        """
+        log.debug(" ")
+        self.msg_type = msg_type.MsgType(Identifiers.FUELING, 0x00)
+        super().__init__(None, self.msg_type)
+        super().create_bytes(None)
+        return

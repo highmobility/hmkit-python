@@ -21,13 +21,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
-from .bit_location import BitLocation
-from .doorposition import DoorPosition
-from .permission import Permission
-#from .propertyvalue_object import PropertyValueObject
-from .capability import Capability
-from .doorlockstate import DoorLockSate
-from .hmproperty import HmProperty
-from .permission_location import PermissionType, PermissionLocation
-from .permissions import Permissions
-from .homecharge_tariff import HomeChargeTariff
+
+from enum import Enum, unique
+import logging
+
+log = logging.getLogger('hmkit.autoapi')
+
+@unique
+class HomeChargerStatus(Enum):
+    """
+    Enum Class for Home Charger Status
+    """
+    DISCONNECTED = 0x00
+    PLUGGED_IN = 0x01
+    CHARGING   = 0x02
+

@@ -52,3 +52,17 @@ from .get_capability import GetCapability
 from .get_vehiclestatus import GetVehicleStatus
 from .open_close_charge_port import OpenCloseChargePort
 from .setreduction_chargingcurrent_times import SetReductionChargingCurrentTimes
+from .get_driverfatigue_state import GetDriverFatigueState
+from .wake_up import WakeUp
+from .get_gasflap_state import GetGasFlapState
+from .control_gas_flap import ControlGasFlap
+from .gasflap_state import GasFlapState
+from .send_heart_rate import SendHeartRate
+from .get_homecharger_state import GetHomeChargerState
+from .set_homecharger_price_tariff import SetHomeChargerPriceTariff
+from .set_homecharger_current import SetHomeChargeCurrent
+from .activate_homecharger_solar import ActivateHomeChargerSolar
+from .enable_homecharger_wifihotspot import EnableHomeChargerWifiHotSpot
+from .authenticate_homecharger import AuthenticateHomeCharger
+from .homecharger_state import HomeCharger_State
+from .driverfatigue_state import DriverFatigueState

@@ -40,8 +40,8 @@ class AccessCertificate():
     Class handles access certificate download, parsing and get apis.
     """
 
-    url = "https://sandbox.api.high-mobility.com/v1/"
-    #url = "https://sandbox.api.develop.high-mobility.net/v1/"
+    url = "https://sandbox.api.high-mobility.com/v1/" # Prod
+    #url = "https://sandbox.api.develop.high-mobility.net/v1/" # Dev
     # Hack for testing with local emulator
     #url = "http://localhost:4443/hm_cloud/api/v1/"
     # Positions of different Fields in Device Certificate

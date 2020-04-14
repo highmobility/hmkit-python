@@ -277,12 +277,12 @@ class HmProperty(bytearray):
         elif valuetype is tuple:
             log.debug("TODO: tuple" )
         elif valuetype is str:
-            log.debug("TODO: str" )
+            value = str(valuebytes)
         elif valuetype is bool:
-            log.debug("TODO: bool" )
+            value = bool(int.from_bytes(valuebytes, byteorder='big', signed=False))
         elif valuetype is float:
-            log.debug("TODO: float" )
-
+            value = struct.unpack('!f', valuebytes)
+ 
         log.info("value: " + str(value))
 
         return value

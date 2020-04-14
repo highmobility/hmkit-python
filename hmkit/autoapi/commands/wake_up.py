@@ -21,13 +21,40 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
-from .bit_location import BitLocation
-from .doorposition import DoorPosition
-from .permission import Permission
-#from .propertyvalue_object import PropertyValueObject
-from .capability import Capability
-from .doorlockstate import DoorLockSate
-from .hmproperty import HmProperty
-from .permission_location import PermissionType, PermissionLocation
-from .permissions import Permissions
-from .homecharge_tariff import HomeChargeTariff
+
+import  base64
+import  json
+import  codecs
+from .. import identifiers
+from .. import msg_type, property_enumeration, command_with_properties
+import hmkit.autoapi
+from ..properties import hmproperty
+from hmkit.autoapi.identifiers import Identifiers
+import hmkit.autoapi.msg_type
+import logging
+
+log = logging.getLogger('hmkit.autoapi')
+
+class WakeUp(command_with_properties.CommandWithProperties):
+
+    WAKE_UP_PROP_ID = 0x01
+
+    """
+    Constructs Wake Up message
+    """
+    def __init__(self):
+        """
+        Constructs Wake Up message
+
+        :param None:
+        """
+        log.debug(" ")
+        self.msg_type = msg_type.MsgType(Identifiers.WAKE_UP, 0x01)
+        super().__init__(None, self.msg_type)
+
+        self.propblocks = []
+        propblock = hmproperty.HmProperty(None, WakeUp.WAKE_UP_PROP_ID, 0x00, None, None)
+        self.propblocks.append(propblock)
+
+        super().create_bytes(self.propblocks)
+        return

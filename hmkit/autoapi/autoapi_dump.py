@@ -76,7 +76,7 @@ class autoapi_dump():
         typ_node = typ_dict_array.get(msgtyp)
         log.debug("----- Type List: " + str(typ_node))
 
-        if (len(typ_node) > 1) is True:
+        if (typ_node is not None) and (len(typ_node) > 1) is True:
            log.debug("----- Type List 1: " + str(typ_node[1]))
            log.debug("----- Type List 1 type: " + str(type(typ_node[1])))
         #element = typ[1]

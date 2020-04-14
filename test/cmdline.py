@@ -27,25 +27,32 @@ import sys
 import codecs
 import traceback
 import datetime
+import time
 from hmkit import hmkit, linklistener, broadcastlistener, autoapi
 import hmkit.autoapi as hm_autoapi
 #from hmkit.autoapi import autoapi_dump
 from hmkit.autoapi import CommandResolver
 from hmkit.autoapi.commands import *
 from hmkit.autoapi.commands import LockUnlockDoors
-from hmkit.autoapi.commands import Notification
+from hmkit.autoapi.commands import Notification, SendHeartRate
 from hmkit.autoapi.commands import get_ignition_state, turn_ignition_onoff, get_vehiclestatus
-from hmkit.autoapi.properties.value import Lock
+from hmkit.autoapi.commands import GetDriverFatigueState, WakeUp, GetGasFlapState, ControlGasFlap
+from hmkit.autoapi.commands import GetHomeChargerState, SetHomeChargerPriceTariff, AuthenticateHomeCharger
+from hmkit.autoapi.commands import SetHomeChargeCurrent, ActivateHomeChargerSolar, EnableHomeChargerWifiHotSpot
+from hmkit.autoapi.properties.value.lock import Lock
+from hmkit.autoapi.properties.value.position import Position
 from hmkit.autoapi.properties.value.charging import ChargeMode
 from hmkit.autoapi.properties.value.charging import ChargingTimer, TimerType
 from hmkit.autoapi.properties.value.charging import ChargePortState
 from hmkit.autoapi.properties.value.charging import ReductionTime
 from hmkit.autoapi.properties.value import ActionItem
 from hmkit.autoapi.properties.value import StartStop
+from hmkit.autoapi.properties.value import PricingType
 from hmkit.autoapi.commands import SetReductionChargingCurrentTimes
 from hmkit.autoapi.properties import PermissionLocation, PermissionType
 from hmkit.autoapi.properties import Permissions
 from hmkit.autoapi.properties import BitLocation
+from hmkit.autoapi.properties import HomeChargeTariff
 from hmkit.autoapi import Identifiers
 from hmkit.autoapi import msg_type
 
@@ -169,10 +176,13 @@ class cmdline():
 
     commands = ("1 - doorlock","2 - doorunlock","3 - getlock","4 - getparkingticket",
     "5 - startparking","6 - endparking","7 - getparkingbreak","8 - setparkingbreak",
-    "9 - getchargestate","10 - openchargeport","11 - closechargeport","12 - setchargelimit",
+    "9 - getchargestate","10 - openchargeport", "11 - closechargeport","12 - setchargelimit",
     "13 - setchargemode","14 - setchargetimer","15 - setreductionchargecurr", "16 - startbroadcast", "17 - stopbroadcast",
     "18 - getcapabilities","19 - notification", "20 - clear notification",
-    "21 - getignitionstate", "22 - turnIgnitionOn", "23 - getVehicleStatus", "24 - Level11 Sample")
+    "21 - getignitionstate", "22 - turnIgnitionOn", "23 - getVehicleStatus", "24 - Level11 Sample",
+    "25 - getdriverfatiguestate", "26 - wakeUp", "27 - getgasflap", "28 - controlgasflap", "29 - sendheartrate",
+    "30 - gethomechargerstate", "31 - sethomechargerpricetariff", "32 - SetHomeChargeCurrent", "33 - ActivateHomeChargerSolar",
+    "34 - EnableHomeChargerWifiHotSpot", "35 - AuthenticateHomeCharger")
 
     def __init__(self):
         #print(" test_hm, __init__() ")
@@ -220,10 +230,14 @@ class cmdline():
         elif inp == 4:
             constructed_bytes = get_parkingticket.GetParkingTicket().get_bytearray()
         elif inp == 5:
-            datetime_str = '10/26/19 01:00:00'
-            endtime_str = '10/27/19 00:59:00'
-            startdatetime = datetime.datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
-            enddatetime = datetime.datetime.strptime(endtime_str, '%m/%d/%y %H:%M:%S')
+            #datetime_str = '10/26/19 01:00:00'
+            #endtime_str = '10/27/19 00:59:00'
+            #startdatetime = datetime.datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
+            #enddatetime = datetime.datetime.strptime(endtime_str, '%m/%d/%y %H:%M:%S')
+            #constructed_bytes = start_parking.StartParking(None,"Berlin Parking","76543",startdatetime, enddatetime ).get_bytearray()
+            #print("ParkingMachine: send_start_parking")
+            startdatetime = datetime.datetime.now()
+            enddatetime = startdatetime + datetime.timedelta(days=1)
             constructed_bytes = start_parking.StartParking(None,"Berlin Parking","76543",startdatetime, enddatetime ).get_bytearray()
         elif inp == 6:
             constructed_bytes = end_parking.EndParking().get_bytearray()
@@ -276,7 +290,30 @@ class cmdline():
         elif inp == 24:
             constructed_bytes = [0x0b, 0x00, 0x23, 0x00];
         elif inp == 25:
-            constructed_bytes = [0x00, 0x23, 0x00];
+            constructed_bytes = GetDriverFatigueState().get_bytearray()
+        elif inp == 26:
+            constructed_bytes = WakeUp().get_bytearray()
+        elif inp == 27:
+            constructed_bytes = GetGasFlapState().get_bytearray()
+        elif inp == 28:
+            constructed_bytes = ControlGasFlap(Lock.UNLOCKED, Position.OPEN).get_bytearray()
+        elif inp == 29:
+            constructed_bytes = SendHeartRate(90).get_bytearray()
+        elif inp == 30:
+            constructed_bytes = GetHomeChargerState().get_bytearray()
+        elif inp == 31:
+            tariffs = []
+            tariffs.append(HomeChargeTariff(PricingType.PER_MINUTE, 1.2, "$"))
+            tariffs.append(HomeChargeTariff(PricingType.PER_KWH, 2.2, "$"))
+            constructed_bytes = SetHomeChargerPriceTariff(None, tariffs).get_bytearray()
+        elif inp == 32:
+            constructed_bytes = SetHomeChargeCurrent(11.9).get_bytearray()
+        elif inp == 33:
+            constructed_bytes = ActivateHomeChargerSolar(True).get_bytearray()
+        elif inp == 34:
+            constructed_bytes = EnableHomeChargerWifiHotSpot(True).get_bytearray()
+        elif inp == 35:
+            constructed_bytes = AuthenticateHomeCharger(True).get_bytearray()
         else:
             print("InValid Key: " + str(inp))
             return
@@ -326,11 +363,20 @@ if __name__== "__main__":
 
     # Initialise with HMKit class with a Device Certificate and private key. To start with
     # this can accept Base64 strings straight from the Developer Center
-    hmkit = hmkit.HmKit(["dGVzdORiDH7GlIqfioiQtliOMwlbcQYBAodKLGqyK1Gr+IGLduFGGvewjh9nkFclZpdns0TNYj6ZkMK8BrscToIPd3Mfu1hg3aVJKy7XQNictPvoufpSXIQNpbyUDTTiAUtCBs3cEQY+SRqcttfV575VUbqM6s+tCLFoQ2RgPoIR/Hi/XnXh/8qUGayBJc2MIckQ2s6+7uRb", "no7qFXL6JtlMyKph9Xp6BaIvxae2cHj210M5jvJJhus=", "N2q9HV421SvfLClnNhaYK1dAcKs3LwDAIOTKhUX4dZbIoonHxfz2614r/ZuMCw9TwjQPHt4MC5LeFEi9wrf5nw=="], logging.DEBUG)
- 
+    '''
+    hmkit = hmkit.HmKit(["dGVzdGb29jukcI4qYCEiG5jnqQHM0CJrwdlTTL0CFc6cvUate1aKIS8HMO68yLSxT9cEbT4eSPpU8o1CkB9BPSm4OdB0HjoXpydZ+XnNrZSgy9ZA6T5qxP66znb1IJovM+jH1etHhDRfcmswfwzbBeeYtLnuD+4HGArmo3Pg5bPcXc/mQLozyx3UpSYZHJhxvQk6nUvHxgON",
+    "PAVAf4Drn/6QH7VHIKFfBYvH2HXKTiQP02Q708pgYTM=",
+    "N2q9HV421SvfLClnNhaYK1dAcKs3LwDAIOTKhUX4dZbIoonHxfz2614r/ZuMCw9TwjQPHt4MC5LeFEi9wrf5nw=="], logging.DEBUG)
+    '''
+
+    hmkit = hmkit.HmKit(["dGVzdGb29jukcI4qYCEiG5jnqQHM0CJrwdlTTL0CFc6cvUate1aKIS8HMO68yLSxT9cEbT4eSPpU8o1CkB9BPSm4OdB0HjoXpydZ+XnNrZSgy9ZA6T5qxP66znb1IJovM+jH1etHhDRfcmswfwzbBeeYtLnuD+4HGArmo3Pg5bPcXc/mQLozyx3UpSYZHJhxvQk6nUvHxgON",
+    "PAVAf4Drn/6QH7VHIKFfBYvH2HXKTiQP02Q708pgYTM=",
+    "N2q9HV421SvfLClnNhaYK1dAcKs3LwDAIOTKhUX4dZbIoonHxfz2614r/ZuMCw9TwjQPHt4MC5LeFEi9wrf5nw=="], logging.DEBUG)
+
     # Download Access Certificate with the token
     try:
-        hmkit.get_instance().download_access_certificate(b"798fb1d0-fdda-49c7-b2bc-da251c5d618d")
+        #hmkit.get_instance().download_access_certificate(b"af64ab32-9b46-4971-b87e-cbe487293a2a")
+        hmkit.get_instance().download_access_certificate(b"7c9e96cc-4ef0-4b67-ba82-1ee48cc8c963")
 
     except Exception as e:
         # Handle the error

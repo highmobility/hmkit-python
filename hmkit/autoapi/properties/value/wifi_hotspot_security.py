@@ -21,13 +21,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
-from .bit_location import BitLocation
-from .doorposition import DoorPosition
-from .permission import Permission
-#from .propertyvalue_object import PropertyValueObject
-from .capability import Capability
-from .doorlockstate import DoorLockSate
-from .hmproperty import HmProperty
-from .permission_location import PermissionType, PermissionLocation
-from .permissions import Permissions
-from .homecharge_tariff import HomeChargeTariff
+
+from enum import Enum, unique
+import logging
+
+log = logging.getLogger('hmkit.autoapi')
+
+@unique
+class WifiHotspotSecurity(Enum):
+    """
+    Enum Class for Wifi Hotspot security
+    """
+    NONE = 0x00
+    WEP = 0x01
+    WPA_WPA2 = 0x02
+    WPA2 = 0x03

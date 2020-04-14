@@ -31,12 +31,16 @@ from .commands import getlockstate, lockstate, lockunlockdoors, failure
 from .commands import get_parkingbrake_state, parkingbrake_state, set_parkingbrake_state
 from .commands import get_parkingticket, parkingticket, start_parking, end_parking
 from .commands import capabilities, get_capability, get_capabilities
-from .commands import ignition_state, VehicleStatus
+from .commands import ignition_state
 #from .commands import get_homecharger_state, homecharger_state, set_charger_current, set_price_tariffs 
 #from .commands import activate_deact_solar_charging, authenticate_expire_home_charger, enable_disable_wifi_hotspot
 from .commands import get_charge_state, charge_state, start_stop_charging, set_charge_limit
 from .commands import open_close_charge_port, set_charge_mode, set_charging_timers, setreduction_chargingcurrent_times
 from .commands import notification, notification_action, clear_notification, notifications_state
+from .commands import VehicleStatus
+from .commands import get_homecharger_state, HomeCharger_State
+from .commands import GasFlapState
+from .commands import DriverFatigueState
 
 #from . import identifiers
 from .identifiers import Identifiers
@@ -82,7 +86,7 @@ class CommandResolver(object):
     notifications = { 0x00:["Notification", notification.Notification], 0x01:["NotificationState", notifications_state.NotificationsState]}
     windows = { 0x00:["GetWindowsState"], 0x01:["WindowsState"]}
     windscreen = { 0x00:["GetWindscreenState"], 0x01:["WindscreenState"]}
-    fueling = { 0x00:["GetGasFlapState"], 0x01:["GasFlapState"], 0x12:["ControlGasFlap"]}
+    fueling = { 0x00:["GetGasFlapState"], 0x01:["GasFlapState", GasFlapState], 0x12:["ControlGasFlap"]}
     parking_ticket = { 0x00:["GetParkingTicket", get_parkingticket.GetParkingTicket], 0x01:["ParkingTicket", parkingticket.ParkingTicket]}
     keyfob_position = { 0x00:["GetKeyfobPosition"], 0x01:["KeyFobPosition"]}
     firmware_version = { 0x00:["GetFirmwareVersion"], 0x01:["FirmwareVersion"]}
@@ -94,7 +98,7 @@ class CommandResolver(object):
     light_conditions = { 0x00:["GetLightConditions"], 0x01:["LightConditions"]}
     weather_conditions = { 0x00:["GetWeatherConditions"], 0x01:["WeatherConditions"]}
     wifi = { 0x00:["GetWifiState"], 0x01:["WifiState"]}
-    home_charger = { 0x00:["GetHomeChargerState"], 0x01:["HomeChargerState"]}
+    home_charger = { 0x00:["GetHomeChargerState"], 0x01:["HomeChargerState", HomeCharger_State]}
     dashboard_lights = { 0x00:["GetDashboardLights"], 0x01:["DashboardLights"]}
     start_stop = { 0x00:["GetStartStopState"], 0x01:["StartStopState"]}
     cruise_control = { 0x00:["GetCruiseControlState"], 0x01:["CruiseControlState"]}
@@ -107,8 +111,8 @@ class CommandResolver(object):
     browser = {0x00:["LoadUrl"]}
     graphics =  {0x00:["DisplayImage"]}
     text_input = {0x00:["TextInput"]}
-    driver_fatigue_detected =  {0x01:["DriverFatigueDetected"]}
-    heart_rate = { 0x12:["SendHeartRate"]}
+    driver_fatigue_detected =  {0x01:["DriverFatigueDetected", DriverFatigueState]}
+    heart_rate = { 0x01:["SendHeartRate"]}
 
     #MsgId_Str_Typ = { Identifiers.FAILURE.value:["FAILURE",failure],
     #Identifiers.FIRMWARE_VERSION.value:["FIRMWARE_VERSION",firmware_version]}
@@ -159,7 +163,7 @@ class CommandResolver(object):
     Identifiers.PARKING_BRAKE.value:["PARKING_BRAKE",parking_brake],
     Identifiers.WIFI.value:["WIFI",wifi],
     Identifiers.HOME_CHARGER.value:["HOME_CHARGER",home_charger],
-    Identifiers.DASHBOARD_LIGHTS.value:["DASHBOARD_LIGHTS",home_charger],
+    Identifiers.DASHBOARD_LIGHTS.value:["DASHBOARD_LIGHTS",dashboard_lights],
     Identifiers.CRUISE_CONTROL.value:["CRUISE_CONTROL",cruise_control],
     Identifiers.START_STOP.value:["START_STOP",start_stop],
     Identifiers.TACHOGRAPH.value:["TACHOGRAPH",tachograph],
@@ -186,7 +190,7 @@ class CommandResolver(object):
         id_node_list = CommandResolver.MsgId_Str_Typ.get(hex_id)
 
         log.debug("resolve id_node_list: " + str(id_node_list))
-        print("resolve id_node_list: " + str(id_node_list))
+        #print("resolve id_node_list: " + str(id_node_list))
 
         # get the type dictionary array list
         typ_dict_array = id_node_list[1]
@@ -195,7 +199,7 @@ class CommandResolver(object):
         typ_node = typ_dict_array.get(msgtyp)
 
         log.info("Type: " + str(type(typ_node)) + " LEN: " + str(len(typ_node)))
-        print("Type: " + str(type(typ_node)) + " LEN: " + str(len(typ_node)))
+        #print("Type: " + str(type(typ_node)) + " LEN: " + str(len(typ_node)))
 
         if (len(typ_node) > 1) is not True:
             log.warning(">>>>> " + id_node_list[0] + " parsing is not implemented yet <<<<<<<")
