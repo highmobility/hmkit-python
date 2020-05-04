@@ -80,7 +80,7 @@ class NotificationsState(command_with_properties.CommandWithProperties):
             elif hmprop.getproperty_identifier() == NotificationsState.IDENTIFIER_ACTIVATED_ACTION:
                 log.debug("NotificationsState.IDENTIFIER_ACTIVATED_ACTION")
                 if hmprop.getcomponent_valuebytes() is not None:
-                    self.activated_action_id = hmprop.getcomponent_valuebytes()
+                    self.activated_action_id = int.from_bytes(hmprop.getcomponent_valuebytes(), byteorder='big', signed=False)
                     log.debug("NotificationsState.IDENTIFIER_ACTIVATED_ACTION_ID : " + str(self.activated_action_id))
 
             elif hmprop.getproperty_identifier() == NotificationsState.IDENTIFIER_CLEAR_NOTIFICATION:
