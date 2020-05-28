@@ -44,7 +44,7 @@ class Storage():
         :param  bytearray accesscertf: device_access_certificate element present in the downloaded access certificate  
         :rtype: None
         """
-        print("\n PY: Storage: store_access_certificate \n")
+        log.debug("\n PY: Storage: store_access_certificate \n")
         signature = self.hmkit.hm_pyc.store_certificate(accesscertf, ser_num)
 
     def get_access_certificate(self, ser_num):
@@ -53,7 +53,7 @@ class Storage():
         :return: accesscertificate
         :rtype: bytearray
         """
-        print("\n PY: Storage: get_access_certificate \n")
+        log.debug("\n PY: Storage: get_access_certificate \n")
         access_cert = self.hmkit.hm_pyc.get_certificate(ser_num)
         return access_cert
 
@@ -64,11 +64,11 @@ class Storage():
         :return:
         :rtype: 
         """
-        print("\n PY: Storage: delete_certificate \n")
+        log.debug("\n PY: Storage: delete_certificate \n")
         log.debug(str(ser_num))
         ret = self.hmkit.hm_pyc.delete_certificate(ser_num)
         return
 
     def __init__(self, hmkit):
-        print("\n PY: Storage Manager \n")
+        log.debug("\n PY: Storage Manager \n")
         self.hmkit = hmkit

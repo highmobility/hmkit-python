@@ -605,10 +605,10 @@ static PyObject * hm_pyc_set_certs(PyObject *self, PyObject *args) {
 			return PyLong_FromLong(-1);
 		}
 
-//#ifdef PYC_DEBUG
+#ifdef PYC_DEBUG
 		printf(" %s(), Length: devcrt = %d, Prv = %d, Pub = %d \n", __FUNCTION__, len_devCert, len_prv, len_issrPub);
 		printf(" Ptr &str_devCert = %p, str_devCert = %p, *str_devCert = 0x%x\n", &str_devCert, str_devCert, *str_devCert);
-//#endif
+#endif
 
 		py_set_dev_prv((uint8_t *)str_prv);
 #ifdef PYC_DEBUG

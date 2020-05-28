@@ -143,31 +143,31 @@ class HmKit():
 
         list_devCerts_decoded = list(devCerts_decoded[0])
         bytes_devCerts_decoded = bytes(list_devCerts_decoded)
-        log.debug("DevCert decoded List, len: " + str(len(list_devCerts_decoded)) + " type: " + str(type(list_devCerts_decoded)) + " Array:  " + str(list_devCerts_decoded))
-        log.debug("DevCert decoded Bytes, len: " + str(len(bytes_devCerts_decoded)) + " type: " + str(type(bytes_devCerts_decoded)) + " Array: " + str(bytes_devCerts_decoded))
+        #log.debug("DevCert decoded List, len: " + str(len(list_devCerts_decoded)) + " type: " + str(type(list_devCerts_decoded)) + " Array:  " + str(list_devCerts_decoded))
+        #log.debug("DevCert decoded Bytes, len: " + str(len(bytes_devCerts_decoded)) + " type: " + str(type(bytes_devCerts_decoded)) + " Array: " + str(bytes_devCerts_decoded))
 
         #-------- Prv -------
         #log.debug("Prv decoded, len: " + str(len(devCerts_decoded[1])) + " type: " + str(type(devCerts_decoded[1])) + " Array:  " + str(devCerts_decoded[1]))
 
         list_prv_decoded = list(devCerts_decoded[1])
         bytes_prv_decoded = bytes(list_prv_decoded)
-        log.debug("DevCert decoded List, len: " + str(len(list_prv_decoded)) + " type: " + str(type(list_prv_decoded)) + " Array: " + str(list_prv_decoded))
-        log.debug("Prv decoded Bytes, len: " + str(len(bytes_prv_decoded)) + " type: " + str(type(bytes_prv_decoded)) + " Array: " + str(bytes_prv_decoded))
+        #log.debug("DevCert decoded List, len: " + str(len(list_prv_decoded)) + " type: " + str(type(list_prv_decoded)) + " Array: " + str(list_prv_decoded))
+        #log.debug("Prv decoded Bytes, len: " + str(len(bytes_prv_decoded)) + " type: " + str(type(bytes_prv_decoded)) + " Array: " + str(bytes_prv_decoded))
 
         #---------- Pub -------
         #log.debug("Prv decoded, len: " + str(len(devCerts_decoded[2])) + " type: " + str(type(devCerts_decoded[2])) + " Array: " + str(devCerts_decoded[2]))
 
         list_pub_decoded = list(devCerts_decoded[2])
         bytes_pub_decoded = bytes(list_pub_decoded)
-        log.debug("Pub decoded List, len: " + str(len(list_pub_decoded)) + " type: " + str(type(list_pub_decoded)) + " Array: " + str(list_pub_decoded))
-        log.debug("Pub decoded Bytes, len: " + str(len(bytes_pub_decoded)) + " type: " + str(type(bytes_pub_decoded)) + " Array: " + str(bytes_pub_decoded))
-        print("DevPrv decoded, len: ",len(devCerts_decoded[1]) ," Array:  ", devCerts_decoded[1])
+        #log.debug("Pub decoded List, len: " + str(len(list_pub_decoded)) + " type: " + str(type(list_pub_decoded)) + " Array: " + str(list_pub_decoded))
+        #log.debug("Pub decoded Bytes, len: " + str(len(bytes_pub_decoded)) + " type: " + str(type(bytes_pub_decoded)) + " Array: " + str(bytes_pub_decoded))
+        #print("DevPrv decoded, len: ",len(devCerts_decoded[1]) ," Array:  ", devCerts_decoded[1])
         h_string2 = codecs.encode(devCerts_decoded[1], 'hex')
-        print("Hex, len: ", len(h_string2), " Value: ", h_string2)
+        #print("Hex, len: ", len(h_string2), " Value: ", h_string2)
 
-        print("IssPub decoded, len: ",len(devCerts_decoded[2]) ," Array:  ", devCerts_decoded[2])
+        #print("IssPub decoded, len: ",len(devCerts_decoded[2]) ," Array:  ", devCerts_decoded[2])
         h_string3 = codecs.encode(devCerts_decoded[2], 'hex')
-        print("Hex, len: ", len(h_string3), " Value: ", h_string3)
+        #print("Hex, len: ", len(h_string3), " Value: ", h_string3)
 
         self.device_certificate.update_devcertf(bytes_devCerts_decoded)
 

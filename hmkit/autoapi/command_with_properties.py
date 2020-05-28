@@ -123,7 +123,6 @@ class CommandWithProperties(object):
             self.msgbytes = bytearray(self.type_version) + self.id_and_type
 
         log.info("full bytes: " + str(self.msgbytes))
-        print("full bytes: " + str(self.msgbytes))
         return None
 
     def get_bytearray(self):
