@@ -31,6 +31,7 @@ from . import  storage
 import logging
 import datetime
 import pytz
+import os
 from hmkit.autoapi.properties.permissions import Permissions
 
 log = logging.getLogger('hmkit')
@@ -40,11 +41,11 @@ class AccessCertificate():
     Class handles access certificate download, parsing and get apis.
     """
 
-    url = "https://sandbox.api.staging.high-mobility.net/v1/" # Staging
-    #url = "https://sandbox.api.high-mobility.com/v1/" # Prod
-    #url = "https://sandbox.api.develop.high-mobility.net/v1/" # Dev
-    # Hack for testing with local emulator
-    #url = "http://localhost:4443/hm_cloud/api/v1/"
+    # Set the environment variable HMSDK_ENV_TYPE the type "staging", "dev", "prod", "local"
+    staging_url = "https://sandbox.api.staging.high-mobility.net/v1/" # Staging
+    prod_url = "https://sandbox.api.high-mobility.com/v1/" # Prod
+    dev_url = "https://sandbox.api.develop.high-mobility.net/v1/" # Dev
+    local_url = "http://localhost:4443/hm_cloud/api/v1/" # Local emulator
     # Positions of different Fields in Device Certificate
     VERSION_POS = 0
     ISSUER_START = 1
@@ -314,6 +315,20 @@ class AccessCertificate():
     def __init__(self, hmkit, cert=None):
         ##print("\n PY: access_certificates_manager \n")
         self.hmkit = hmkit
+        self.build_type = os.environ.get("HMSDK_ENV_TYPE")
+        if self.build_type == "prod":
+            self.url = self.prod_url
+        elif self.build_type == "dev":
+            self.url = self.dev_url
+        elif self.build_type == "staging":
+            self.url = self.staging_url
+        elif self.build_type == "local":
+            self.url = self.local_url
+        else: #default to prod
+            self.url = self.prod_url
+
+        log.debug("url: " + self.url)
+
         if cert is not None:
             self.accesscert = cert
             self.parse_decoded_certiticate(self.accesscert)

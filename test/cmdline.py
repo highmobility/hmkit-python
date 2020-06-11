@@ -84,8 +84,8 @@ class Link_Listener(hmkit.linklistener.LinkListener):
         log.info("Len: " + str(len(cmd)))
         #log.debug("\n App: Cmd :", cmd)
         b_string = codecs.encode(cmd, 'hex')
-        #log.info("*** Hex:* " + str(b_string) + " + Type: " + str(type(b_string)))
-        print("*** Hex:* " + str(b_string) + " + Type: " + str(type(b_string)))
+        log.debug("*** Hex:* " + str(b_string) + " + Type: " + str(type(b_string)))
+        #print("*** Hex:* " + str(b_string) + " + Type: " + str(type(b_string)))
 
         hmkit_inst = hmkit.get_instance()
         hmkit_inst.autoapi_dump.message_dump(cmd)
@@ -363,20 +363,14 @@ if __name__== "__main__":
 
     # Initialise with HMKit class with a Device Certificate and private key. To start with
     # this can accept Base64 strings straight from the Developer Center
-    '''
-    hmkit = hmkit.HmKit(["dGVzdGb29jukcI4qYCEiG5jnqQHM0CJrwdlTTL0CFc6cvUate1aKIS8HMO68yLSxT9cEbT4eSPpU8o1CkB9BPSm4OdB0HjoXpydZ+XnNrZSgy9ZA6T5qxP66znb1IJovM+jH1etHhDRfcmswfwzbBeeYtLnuD+4HGArmo3Pg5bPcXc/mQLozyx3UpSYZHJhxvQk6nUvHxgON",
-    "PAVAf4Drn/6QH7VHIKFfBYvH2HXKTiQP02Q708pgYTM=",
-    "N2q9HV421SvfLClnNhaYK1dAcKs3LwDAIOTKhUX4dZbIoonHxfz2614r/ZuMCw9TwjQPHt4MC5LeFEi9wrf5nw=="], logging.DEBUG)
-    '''
 
-    hmkit = hmkit.HmKit(["dGVzdGb29jukcI4qYCEiG5jnqQHM0CJrwdlTTL0CFc6cvUate1aKIS8HMO68yLSxT9cEbT4eSPpU8o1CkB9BPSm4OdB0HjoXpydZ+XnNrZSgy9ZA6T5qxP66znb1IJovM+jH1etHhDRfcmswfwzbBeeYtLnuD+4HGArmo3Pg5bPcXc/mQLozyx3UpSYZHJhxvQk6nUvHxgON",
-    "PAVAf4Drn/6QH7VHIKFfBYvH2HXKTiQP02Q708pgYTM=",
-    "N2q9HV421SvfLClnNhaYK1dAcKs3LwDAIOTKhUX4dZbIoonHxfz2614r/ZuMCw9TwjQPHt4MC5LeFEi9wrf5nw=="], logging.DEBUG)
+    hmkit = hmkit.HmKit(["dGVzdEUTEM0a92kpgEW5Yvfq8VEQmf2f8IFEgAQ34X7TPZjG6P4IGPyqorpJD8rXyK3aLejImdLZHaHT6jrPPdxpm+JzEjIGlwux3TZknv64nAAbejubKmAO8ua0MRs7lrzJ0r8CqMAUSY3+abRmmzRhHp6bQE0Q2pWMb0kqvGCsAbq92YuNkbvNSsSzeKo0vya7wrb8RoYs",
+    "bXVCzrYtwwehRNYhJ2+wWj3iJBS1BvPYL9P8MofMBDI=",
+    "5jAC31ddtR4RKeF2O10fuSNkYtCtzTW9uUWu+K4PfVZ1ZEO5L6so+zFpvykVxYdfEOqhX2Eba3gdjrEDvX144Q=="], logging.DEBUG)
 
     # Download Access Certificate with the token
     try:
-        #hmkit.get_instance().download_access_certificate(b"af64ab32-9b46-4971-b87e-cbe487293a2a")
-        hmkit.get_instance().download_access_certificate(b"7c9e96cc-4ef0-4b67-ba82-1ee48cc8c963")
+        hmkit.get_instance().download_access_certificate(b"b063d69b-a069-4abc-ad02-d2ae99deffe4")
 
     except Exception as e:
         # Handle the error
@@ -396,8 +390,11 @@ if __name__== "__main__":
     # set Broadcast listener for BT broadcast events
     hmkit.bluetooth.broadcaster.set_listener(broadcastListener)
 
+    # Set BLE Device Name, it must be 8 chars
+    hmkit.bluetooth.setBleDeviceName("parkhere")
+
     # Start BLE broadcasting/advertising, hmkit-core does it during init
-    #hmkit.bluetooth.startBroadcasting()
+    hmkit.bluetooth.startBroadcasting()
 
     #hmkit.bluetooth.stopBroadcasting()
 

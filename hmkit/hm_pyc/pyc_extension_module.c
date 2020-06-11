@@ -59,6 +59,7 @@ extern int py_delete_accesscertificate(uint8_t *ser_num);
 extern int py_ble_advertisement_start(void);
 extern int py_ble_advertisement_stop(void);
 extern int hm_link_exit(void);
+extern void py_set_ble_device_name(uint8_t *name);
 
 int pyBytes_toString(PyObject *pArray, char **str, int *length);
 
@@ -378,6 +379,53 @@ static PyObject * hm_pyc_ble_advertisement_stop(PyObject *self, PyObject *args) 
 
 	return PyLong_FromLong(ret);
 }
+
+// wrapper function for setting BLE device name
+static PyObject * hm_pyc_set_ble_device_name(PyObject *self, PyObject *args) {
+	int ret = 0;
+
+    PyObject *pArray;
+    //printf("DEBUG %d %s ,%s()\n", __LINE__, __FILE__, __FUNCTION__);
+
+    if (PyArg_ParseTuple(args, "S", &pArray))
+    {
+        if (PyBytes_Check(pArray))
+        {
+            char *str = NULL;
+            Py_ssize_t len = 0;
+
+            /* Check for a string typecode. */
+            if (PyBytes_AsStringAndSize(pArray, &str, &len) < 0)
+            {
+                //goto error;
+                printf("Error %s() converting Byte to String \n", __FUNCTION__);
+                return NULL;
+            }
+
+            /* Empty string is invalid */
+            if (len != 8)
+            {
+                printf("Error %s() converting Byte to String, len = 0\n", __FUNCTION__);
+                return NULL;
+            }
+
+            py_set_ble_device_name(str);
+        }
+        else
+        {
+            printf("Error %s() failed in Bytes Check \n", __FUNCTION__);
+            return PyLong_FromLong(-1);
+        }
+    }
+    else
+    {
+        printf("Error %s() failed in parsing Tuple \n", __FUNCTION__);
+        return PyLong_FromLong(-1);
+    }
+
+	return PyLong_FromLong(ret);
+}
+
 
 // wrapper function for storing access certificate 
 static PyObject * hm_pyc_store_access_certificate(PyObject *self, PyObject *args) {
@@ -711,7 +759,9 @@ static PyMethodDef EmbMethods[] = {
      "ble advertisement start"},
      {"ble_advertisement_stop", hm_pyc_ble_advertisement_stop, METH_VARARGS,
      "ble advertisement stop"},
-   {NULL, NULL, 0, NULL}
+     {"set_ble_device_name", hm_pyc_set_ble_device_name, METH_VARARGS,
+     "set ble device name"},
+    {NULL, NULL, 0, NULL}
 };
 
 static PyModuleDef EmbModule = {

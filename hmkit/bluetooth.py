@@ -52,6 +52,7 @@ class Bluetooth():
         log.info("\n")
         self.hm_pyc.ble_advertisement_start()
 
+
     def stopBroadcasting(self):
         """
         Stop Bluetooth Advertisement 
@@ -60,6 +61,21 @@ class Bluetooth():
         """
         log.info("\n")
         self.hm_pyc.ble_advertisement_stop()
+
+
+    def setBleDeviceName(self, name):
+        """
+        Set BLE Device Name
+
+        :param string name: BLE Device name, must be 8 chars
+        :rtype: int
+        """
+        log.info("\n")
+        if len(name) != 8:
+            log.error("BLE Device Name must be 8 characters, add some space ?")
+            return 1
+
+        self.hm_pyc.set_ble_device_name(name.encode())
 
     def py_cb_command_incoming(self, msg):
         """
