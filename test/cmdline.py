@@ -34,11 +34,12 @@ import hmkit.autoapi as hm_autoapi
 from hmkit.autoapi import CommandResolver
 from hmkit.autoapi.commands import *
 from hmkit.autoapi.commands import LockUnlockDoors
-from hmkit.autoapi.commands import Notification, SendHeartRate
+from hmkit.autoapi.commands import Notification, SendHeartRate, GetVehicleTime, VehicleTime
 from hmkit.autoapi.commands import get_ignition_state, turn_ignition_onoff, get_vehiclestatus
 from hmkit.autoapi.commands import GetDriverFatigueState, WakeUp, GetGasFlapState, ControlGasFlap
 from hmkit.autoapi.commands import GetHomeChargerState, SetHomeChargerPriceTariff, AuthenticateHomeCharger
 from hmkit.autoapi.commands import SetHomeChargeCurrent, ActivateHomeChargerSolar, EnableHomeChargerWifiHotSpot
+from hmkit.autoapi.commands import GetTrunkState, TrunkState, ControlTrunk
 from hmkit.autoapi.properties.value.lock import Lock
 from hmkit.autoapi.properties.value.position import Position
 from hmkit.autoapi.properties.value.charging import ChargeMode
@@ -182,7 +183,8 @@ class cmdline():
     "21 - getignitionstate", "22 - turnIgnitionOn", "23 - getVehicleStatus", "24 - Level11 Sample",
     "25 - getdriverfatiguestate", "26 - wakeUp", "27 - getgasflap", "28 - controlgasflap", "29 - sendheartrate",
     "30 - gethomechargerstate", "31 - sethomechargerpricetariff", "32 - SetHomeChargeCurrent", "33 - ActivateHomeChargerSolar",
-    "34 - EnableHomeChargerWifiHotSpot", "35 - AuthenticateHomeCharger")
+    "34 - EnableHomeChargerWifiHotSpot", "35 - AuthenticateHomeCharger", "36 - GetVehicleTime", "37 - GetTrunkState",
+    "38 - ControlTrunk")
 
     def __init__(self):
         #print(" test_hm, __init__() ")
@@ -314,6 +316,12 @@ class cmdline():
             constructed_bytes = EnableHomeChargerWifiHotSpot(True).get_bytearray()
         elif inp == 35:
             constructed_bytes = AuthenticateHomeCharger(True).get_bytearray()
+        elif inp == 36:
+            constructed_bytes = GetVehicleTime().get_bytearray()
+        elif inp == 37:
+            constructed_bytes = GetTrunkState().get_bytearray()
+        elif inp == 38:
+            constructed_bytes = ControlTrunk(Lock.UNLOCKED, Position.OPEN).get_bytearray()
         else:
             print("InValid Key: " + str(inp))
             return

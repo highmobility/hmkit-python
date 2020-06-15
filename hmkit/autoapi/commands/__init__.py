@@ -66,3 +66,8 @@ from .enable_homecharger_wifihotspot import EnableHomeChargerWifiHotSpot
 from .authenticate_homecharger import AuthenticateHomeCharger
 from .homecharger_state import HomeCharger_State
 from .driverfatigue_state import DriverFatigueState
+from .vehicle_time import VehicleTime
+from .get_vehicle_time import GetVehicleTime
+from .get_trunk_state import GetTrunkState
+from .trunkstate import TrunkState
+from .control_trunk import ControlTrunk

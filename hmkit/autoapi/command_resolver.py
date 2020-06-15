@@ -41,6 +41,9 @@ from .commands import VehicleStatus
 from .commands import get_homecharger_state, HomeCharger_State
 from .commands import GasFlapState
 from .commands import DriverFatigueState
+from .commands import VehicleTime, GetVehicleTime
+from .commands import GetTrunkState, TrunkState
+
 
 #from . import identifiers
 from .identifiers import Identifiers
@@ -68,7 +71,7 @@ class CommandResolver(object):
     theft_alarm = { 0x00:["GetTheftAlarmState"], 0x01:["TheftAlarmState"], 0x12:["SetTheftAlarm"]}
     failure = { 0x01:["Failure", failure.Failure]}
     capabilities = {0x00:["GetCapabilities", get_capabilities.GetCapabilities],0x01:["Capabilities", capabilities.Capabilities]}
-    trunk_access = { 0x00:["GetTrunkState"], 0x01:["TrunkState"]}
+    trunk_access = { 0x00:["GetTrunkState", GetTrunkState], 0x01:["TrunkState", TrunkState]}
     hood = { 0x00:["GetHoodState"], 0x01:["HoodState"]}
     charging = { 0x00:["GetChargeState", get_charge_state.GetChargeState], 0x01:["ChargeState", charge_state.ChargeState]}
     climate = { 0x00:["GetClimateState"], 0x01:["ClimateState"]}
@@ -77,7 +80,7 @@ class CommandResolver(object):
     remote_control = { 0x00:["GetControlMode"], 0x04:["ControlCommand"], 0x01:["ControlMode"]}
     valet_mode = { 0x00:["GetValetMode"], 0x01:["ValetMode"]}
     vehicle_location = { 0x00:["GetVehicleLocation"], 0x01:["VehicleLocation"]}
-    vehicle_time = { 0x00:["GetVehicleTime"], 0x01:["VehicleTime"]}
+    vehicle_time = { 0x00:["GetVehicleTime", GetVehicleTime], 0x01:["VehicleTime", VehicleTime]}
     navi_destination = { 0x00:["GetNaviDestination"], 0x01:["NaviDestination"]}
     maintenance = {  0x00:["GetMaintenanceState"], 0x01:["MaintenanceState"]}
     engine = { 0x00:["GetIgnitionState"], 0x01:["IgnitionState", ignition_state.IgnitionState]}

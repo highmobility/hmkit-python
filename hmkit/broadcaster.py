@@ -41,8 +41,8 @@ class Broadcaster(object):
         :param bytearray msg: received message
         :rtype: None
         """
-        log.critical("\n--------- broadcaster.connected ------")
-        print("\n--------- broadcaster.connected ------")
+        log.critical("\n--------- BLE Device Connected (broadcaster) ------")
+        print("\n--------- BLE Device Connected ------")
         self.bt_connected = 1;
         if self.broadcastlistener is not None:
             self.broadcastlistener.connected(msg)
@@ -63,8 +63,8 @@ class Broadcaster(object):
         :param bytearray msg: received message
         :rtype: None
         """
-        log.critical("\n-------- broadcaster.disconnected -------\n")
-        print("\n-------- broadcaster.disconnected -------\n")
+        log.critical("\n-------- BLE Device Disconnected (broadcaster) -------\n")
+        print("\n-------- BLE Device Disconnected (broadcaster) -------\n")
         self.bt_connected = 0;
         if self.broadcastlistener is not None:
             self.broadcastlistener.disconnected(msg)
