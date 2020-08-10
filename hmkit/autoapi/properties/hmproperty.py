@@ -26,6 +26,7 @@ import sys
 import codecs
 import traceback
 import logging
+import struct
 from . import *
 from enum import Enum
 from datetime import datetime
@@ -33,6 +34,7 @@ from datetime import datetime
 #from . import properties.value.position
 from .component.property_component_value import PropertyComponentValue
 from .component.property_component_timestamp import PropertyComponentTimestamp
+from .component.property_component_failure import PropertyComponentFailure
 
 log = logging.getLogger('hmkit.autoapi')
 
@@ -229,6 +231,8 @@ class HmProperty(bytearray):
                 self.failure = PropertyComponentFailure(compbytes)
                 log.debug("failure")
 
+            # TODO: Availability component
+
             count += 3 + compsize
  
         return
@@ -248,7 +252,7 @@ class HmProperty(bytearray):
 
         if valuetype is int:
             value = int.from_bytes(valuebytes, byteorder='big')
-            log.debug("int: " + str(timestamp_ms))
+            log.debug("int: " + str(value))
         #elif valuetype is type(datetime):
         elif valuetype is datetime:
             timestamp_ms = int.from_bytes(valuebytes, byteorder='big', signed=False)
@@ -260,7 +264,7 @@ class HmProperty(bytearray):
                 #value = datetimeutc = datetime.fromtimestamp(timestamp_ms/1000)
 
             except (OverflowError, OSError)  as e:
-                log.exception("get_datetime() Exception: ", e.data)
+                log.exception("get_datetime() Exception: " + str(e)) #e.data
             else:
                 log.debug("get_datetime(): " + datetimeutc.strftime('%Y-%m-%d %H:%M:%S.%f'))
                 log.debug("year: " + str(datetimeutc.year))

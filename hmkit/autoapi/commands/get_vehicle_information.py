@@ -22,17 +22,30 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-from enum import Enum, unique
+import  base64
+import  json
+import  codecs
+from .. import identifiers
+from .. import msg_type, property_enumeration, command_with_properties
+import hmkit.autoapi
+from hmkit.autoapi.identifiers import Identifiers
+import hmkit.autoapi.msg_type
 import logging
 
 log = logging.getLogger('hmkit.autoapi')
 
-@unique
-class HomeChargerStatus(Enum):
+class GetVehicleStatus(command_with_properties.CommandWithProperties):
     """
-    Enum Class for Home Charger Status
+    Constructs Get Vehicle Status message
     """
-    DISCONNECTED = 0x00
-    PLUGGED_IN = 0x01
-    CHARGING   = 0x02
+    def __init__(self):
+        """
+        Constructs Get Vehicle Status message
 
+        :param None:
+        """
+        log.debug(" ")
+        self.msg_type = msg_type.MsgType(Identifiers.VEHICLE_STATUS, 0x00)
+        super().__init__(None, self.msg_type)
+        super().create_bytes(None)
+        return

@@ -34,3 +34,8 @@ from .homecharge_authmechanism import HomeChargerAuthMechanism
 from .homecharge_chargestatus import HomeChargerStatus
 from .wifi_hotspot_security import WifiHotspotSecurity
 from .fatigue_level import FatigueLevel
+from .measurement_type import MeasurementType
+from .unit_type import  *
+from .current_type import CurrentType
+from .values_with_unit import  *
+from .power_train_type import  PowerTrainType

@@ -117,8 +117,6 @@ class CommandResolver(object):
     driver_fatigue_detected =  {0x01:["DriverFatigueDetected", DriverFatigueState]}
     heart_rate = { 0x01:["SendHeartRate"]}
 
-    #MsgId_Str_Typ = { Identifiers.FAILURE.value:["FAILURE",failure],
-    #Identifiers.FIRMWARE_VERSION.value:["FIRMWARE_VERSION",firmware_version]}
 
     # Lookup table (Dictionary) that links msg Identifier to the Message Type Lookup table
     MsgId_Str_Typ = { Identifiers.FAILURE.value:["FAILURE",failure],

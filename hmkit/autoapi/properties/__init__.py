@@ -31,3 +31,4 @@ from .hmproperty import HmProperty
 from .permission_location import PermissionType, PermissionLocation
 from .permissions import Permissions
 from .homecharge_tariff import HomeChargeTariff
+from .data_measurement_unit import DataMeasurementUnit

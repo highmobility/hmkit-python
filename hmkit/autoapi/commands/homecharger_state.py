@@ -33,7 +33,10 @@ from ..properties.value.double_hm import DoubleHm
 from ..properties.value import HomeChargerStatus, HomeChargerAuthMechanism, WifiHotspotSecurity
 from ..properties.value import PricingType
 from ..properties import HomeChargeTariff
-
+from ..properties import DataMeasurementUnit
+from ..properties.value import MeasurementType, CurrentType
+from ..properties.value.unit_type import *
+from ..properties.value.values_with_unit import *
 import logging
 
 log = logging.getLogger('hmkit.autoapi')
@@ -46,18 +49,19 @@ class HomeCharger_State(command_with_properties.CommandWithProperties):
     CHARGING_STATUS = 0x01 # float
     AUTHENTICATION_MECHANISM = 0x02 # enum
     CHARGER_PLUG_TYPE = 0x03 # enum
-    CHARGING_POWER_KW = 0x04 # float, 4 bytes
     SOLAR_CHARGING = 0x05 # enum
     WIFI_HOTSPOT_ENABLE = 0x08 # enum
     WIFI_HOTSPOT_SSID = 0x09 # string, variable len
     WIFI_HOTSPOT_SECURITY = 0x0A # enum
     WIFI_HOTSPOT_PASSWD = 0x0b # string,  variable len
     AUTHENTICATION_STATE = 0x0d # enum
-    CHARGE_CURRENT_DC = 0x0e # float, 4 bytes
-    MAX_CHARGING_CURRENT = 0x0F  # float, 4 bytes
-    MIN_CHARGING_CURRENT = 0x10  # float, 4 bytes
+    CHARGE_CURRENT = 0x0e #
+    MAX_CHARGING_CURRENT = 0x0F  #
+    MIN_CHARGING_CURRENT = 0x10  #
     COORDINATES = 0x11 # latitude(double) 8 bytes, longitude(double) 8 bytes
     PRICE_TARIFF = 0x12 # Pricing Type(enum), Price(float), Currency(string)
+    CHARGING_POWER = 0x13 #
+    CURRENT_TYPE = 0x14  # Enum 1 byte #TODO: ID value to be modified
 
     def __init__(self, msgbytes):
         """
@@ -73,24 +77,22 @@ class HomeCharger_State(command_with_properties.CommandWithProperties):
         self.charging_status = None # float
         self.authentication_mechanism = None # enum
         self.plug_type = None # enum
-        self.charging_power_kw = None # float
+        self.charging_power = None # properties.value.values_with_unit.Power
         self.solar_charging = None # enum
         self.wifi_hotspot_enable = None # enum
         self.wifi_hotspot_ssid = None # string
         self.wifi_hotspot_security = None # enum
         self.wifi_hotspot_passwd = None # string
         self.authentication_state = None # enum
-        self.charge_current_dc = None # float
-        self.max_charging_current = None # float
-        self.min_charging_current = None # float
+        self.charge_current = None # class: `properties.value.values_with_unit.Current`
+        self.max_charging_current = None # class: `properties.value.values_with_unit.Current`
+        self.min_charging_current = None # class: `properties.value.values_with_unit.Current`
         self.coordinates_latitude = None # Double
         self.coordinates_longitude = None # Double
         self.tariff_type = None # enum
         self.tariff_price = None # float
         self.tariff_currency = None # string
-
-        props = super().getProperties()
-        prop_itr = self.properties_iterator
+        self.current_type = None # Enum, AC/DC, properties.value.CurrentType
 
         i = 0
         while self.properties_iterator.has_next() == True:
@@ -123,13 +125,13 @@ class HomeCharger_State(command_with_properties.CommandWithProperties):
                     self.plug_type = PlugType(plug_type)
                     log.debug(" CHARGER_PLUG_TYPE: " + str(self.plug_type))
 
-            elif hmprop.getproperty_identifier() == HomeCharger_State.CHARGING_POWER_KW:
+            elif hmprop.getproperty_identifier() == HomeCharger_State.CHARGING_POWER:
                  # float 4 bytes
-                log.debug("HomeCharger_State CHARGING_POWER_KW")
+                log.debug("HomeCharger_State CHARGING_POWER")
                 if hmprop.getcomponent_valuebytes() is not None:
-                    charging_powerkw = struct.unpack('!f',hmprop.getcomponent_valuebytes())
-                    self.charging_power_kw = charging_powerkw[0]
-                    log.debug(" CHARGING_POWER_KW: " + str(self.charging_power_kw))
+                    data_unit = DataMeasurementUnit(value_compbytes=hmprop.getcomponent_valuebytes())
+                    self.charging_power = Power(data_unit.get_data_value(), data_unit.get_unit_type())
+                    log.debug("HomeCharger_State CHARGING_POWER: " + str(data_unit.get_data_value()) + " ,Unit: " + str(data_unit.get_unit_type()))
 
             elif hmprop.getproperty_identifier() == HomeCharger_State.SOLAR_CHARGING:
                 # Enum 1 byte (bool)
@@ -172,32 +174,29 @@ class HomeCharger_State(command_with_properties.CommandWithProperties):
                     self.authentication_state = bool(int.from_bytes(hmprop.getcomponent_valuebytes(), byteorder='big', signed=False))
                     log.debug("AUTHENTICATION_STATE bool: " + str(self.authentication_state))
 
-            elif hmprop.getproperty_identifier() == HomeCharger_State.CHARGE_CURRENT_DC:
-                # float 4 bytes
-                log.debug("HomeCharger_State CHARGE_CURRENT_DC")
+            elif hmprop.getproperty_identifier() == HomeCharger_State.CHARGE_CURRENT:
+                # data with unit
+                log.debug("HomeCharger_State CHARGE_CURRENT")
                 if hmprop.getcomponent_valuebytes() is not None:
-                    charge_currentdc = struct.unpack('!f',hmprop.getcomponent_valuebytes())
-                    self.charge_current_dc = charge_currentdc[0]
-                    log.debug(" CHARGE_CURRENT_DC: " + str(self.charge_current_dc))
+                    data_unit = DataMeasurementUnit(value_compbytes=hmprop.getcomponent_valuebytes())
+                    self.charge_current = Current(data_unit.get_data_value(), data_unit.get_unit_type())
+                    log.debug("CHARGE_CURRENT: " + str(data_unit.get_data_value()) + " ,Unit: " + str(data_unit.get_unit_type()))
 
             elif hmprop.getproperty_identifier() == HomeCharger_State.MAX_CHARGING_CURRENT:
-                # float 4 bytes
-                log.debug("HomeCharger_State MAX_CHARGING_CURRENT")
+                # data with unit
                 if hmprop.getcomponent_valuebytes() is not None:
-                    maxcharging_current = struct.unpack('!f',hmprop.getcomponent_valuebytes())
-                    self.max_charging_current = maxcharging_current[0]
-                    log.debug(" MAX_CHARGING_CURRENT: " + str(self.max_charging_current))
+                    data_unit = DataMeasurementUnit(value_compbytes=hmprop.getcomponent_valuebytes())
+                    self.max_charging_current = Current(data_unit.get_data_value(), data_unit.get_unit_type())
+                    log.debug("HomeCharger_State MAX_CHARGING_CURRENT: " + str(data_unit.get_data_value()) + " ,Unit: " + str(data_unit.get_unit_type()))
 
             elif hmprop.getproperty_identifier() == HomeCharger_State.MIN_CHARGING_CURRENT:
-                # float 4 bytes
-                log.debug("HomeCharger_State MIN_CHARGING_CURRENT")
+                # data with unit
                 if hmprop.getcomponent_valuebytes() is not None:
-                    min_chargingcurrent = struct.unpack('!f',hmprop.getcomponent_valuebytes())
-                    self.min_charging_current = min_chargingcurrent[0]
-                    log.debug(" MIN_CHARGING_CURRENT: " + str(self.min_charging_current))
+                    data_unit = DataMeasurementUnit(value_compbytes=hmprop.getcomponent_valuebytes())
+                    self.min_charging_current = Current(data_unit.get_data_value(), data_unit.get_unit_type())
+                    log.debug("HomeCharger_State MIN_CHARGING_CURRENT: " + str(data_unit.get_data_value()) + " ,Unit: " + str(data_unit.get_unit_type()))
 
             elif hmprop.getproperty_identifier() == HomeCharger_State.COORDINATES:
-
                 log.debug("HomeCharger_State COORDINATES")
                 if hmprop.getcomponent_valuebytes() is not None:
                     comp_bytes = hmprop.getcomponent_valuebytes()
@@ -217,6 +216,14 @@ class HomeCharger_State(command_with_properties.CommandWithProperties):
                     comp_bytes = hmprop.getcomponent_valuebytes()
                     self.tariff = HomeChargeTariff(None, None, None, comp_bytes)
 
+            elif hmprop.getproperty_identifier() == HomeCharger_State.CURRENT_TYPE:
+                 # Enum 1 byte, AC/DC
+                log.debug("ChargeState CURRENT_TYPE")
+                if hmprop.getcomponent_valuebytes() is not None:
+                    current_type = int.from_bytes(hmprop.getcomponent_valuebytes(), byteorder='big', signed=False)
+                    self.current_type = CurrentType(current_type)
+                    log.debug("CURRENT_TYPE: " + str(self.current_type))
+    
         return
 
 
@@ -248,14 +255,14 @@ class HomeCharger_State(command_with_properties.CommandWithProperties):
         """
         return self.plug_type
 
-    def get_charging_powerkw(self):
+    def get_charging_power(self):
         """
         Get Charging Powerkw
 
         :param None:
-        :rtype: float
+        :rtype: class: `properties.value.values_with_unit.Power`
         """
-        return self.charging_power_kw
+        return self.charging_power
 
     def get_solar_charging(self):
         """
@@ -311,19 +318,28 @@ class HomeCharger_State(command_with_properties.CommandWithProperties):
         """
         return self.authentication_state
 
-    def get_charge_current_dc(self):
+    def get_charge_current(self):
         """
-        Get Charge Current DC
+        Get Charge Current
         :param None:
-        :rtype: float
+        :rtype: class: `properties.value.values_with_unit.Current`
         """
-        return self.charge_current_dc
+        return self.charge_current
+
+    def get_current_type(self):
+        """
+        Get Current Type (AC/DC)
+
+        :param None:
+        :rtype: Enum class:`properties.value.CurrentType`
+        """
+        return self.current_type
 
     def get_max_charging_current(self):
         """
         Get Max Charging Current
         :param None:
-        :rtype: float
+        :rtype: class: `properties.value.values_with_unit.Current`
         """
         return self.max_charging_current
 
@@ -332,7 +348,7 @@ class HomeCharger_State(command_with_properties.CommandWithProperties):
         Get Min Charging Current
 
         :param None:
-        :rtype: float
+        :rtype: class: `properties.value.values_with_unit.Current`
         """
         return self.min_charging_current
 

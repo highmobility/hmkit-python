@@ -32,6 +32,10 @@ from hmkit.autoapi.identifiers import Identifiers
 import hmkit.autoapi.msg_type
 from ..properties import hmproperty
 from enum import Enum, unique
+from ..properties import DataMeasurementUnit
+from ..properties.value import MeasurementType
+from ..properties.value.unit_type import FrequencyUnit
+from ..properties.values_with_unit import HeartRate
 import logging
 
 log = logging.getLogger('hmkit.autoapi')
@@ -42,23 +46,22 @@ class SendHeartRate(command_with_properties.CommandWithProperties):
     """
     HEART_RATE = 0x01
 
-    def __init__(self, rate):
+    def __init__(self, heartrate):
         """
-        Constructs Send Heart Rate  message bytes and constructs Instance
+        Constructs Send Heart Rate message bytes and constructs Instance
 
-        :param rate: int
+        :param heartrate: Enum HeartRate:`properties.values_with_unit.HeartRate`
         """
         log.debug(" ")
         self.msg_type = msg_type.MsgType(Identifiers.HEART_RATE, 0x01)
         super().__init__(None, self.msg_type)
 
-        if isinstance(rate, int):
-            self.prop_heartrate = hmproperty.HmProperty(None, SendHeartRate.HEART_RATE, rate, None, None)
+        if isinstance(heartrate, HeartRate):
+            data_unit = DataMeasurementUnit(measurement_type=MeasurementType.FREQUENCY, unit_type=heartrate.get_unit(), data_value=heartrate.get_heartrate())
+            self.prop_heartrate = hmproperty.HmProperty(None, SendHeartRate.HEART_RATE, data_unit, None, None)
 
             super().create_bytes(self.prop_heartrate)
         else:
             log.error("invalid argument type")
 
         return
-
-

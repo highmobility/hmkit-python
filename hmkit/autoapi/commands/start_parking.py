@@ -85,7 +85,7 @@ class StartParking(command_with_properties.CommandWithProperties):
                 self.operator_name = hmproperty.HmProperty(None, StartParking.OPERATOR_NAME_IDENTIFIER, operator_name, None, None)
                 properties.append(self.operator_name)
             else:
-                log.debug("wrong parameter type for operator_name Expected Str but : " + str(type(operator_name)))
+                log.error("wrong parameter type for operator_name Expected Str but : " + str(type(operator_name)))
 
             if isinstance(operatorticket_id, str):
                 # create a property
@@ -95,7 +95,7 @@ class StartParking(command_with_properties.CommandWithProperties):
                 #super().create_bytes(self.parkbrakestate)
                 properties.append(self.ticket_id)
             else:
-                log.debug("wrong parameter type for ticket_id Expected Str but : " + str(type(ticket_id)))
+                log.error("wrong parameter type for ticket_id Expected Str but : " + str(type(ticket_id)))
 
             if isinstance(start_time, datetime):
                 # create a property
@@ -105,7 +105,7 @@ class StartParking(command_with_properties.CommandWithProperties):
                 #super().create_bytes(self.parkbrakestate)
                 properties.append(self.start_time)
             else:
-                log.debug("wrong parameter type for start_time Expected datetime but : " + str(type(start_time)))
+                log.error("wrong parameter type for start_time Expected datetime but : " + str(type(start_time)))
 
             if isinstance(end_time, datetime):
                 # create a property
@@ -115,12 +115,12 @@ class StartParking(command_with_properties.CommandWithProperties):
                 #super().create_bytes(self.parkbrakestate)
                 properties.append(self.end_time)
             else:
-                log.debug("wrong parameter type for end_time Expected datetime but : " + str(type(end_time)))
+                log.error("wrong parameter type for end_time Expected datetime but : " + str(type(end_time)))
     
             super().create_bytes(properties)
 
         else:
-            log.debug("parsing case not required for link device ")
+            log.error("parsing case not required for link device ")
 
         return
 

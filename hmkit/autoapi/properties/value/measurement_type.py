@@ -28,11 +28,26 @@ import logging
 log = logging.getLogger('hmkit.autoapi')
 
 @unique
-class PricingType(Enum):
+class MeasurementType(Enum):
     """
-    Enum Class for Home Charger Tariff PricingType
+    Enum Class for Measurement Types to represent Data Component Values
     """
-    STARTING_FEE = 0x00
-    PER_MINUTE = 0x01
-    PER_KWH = 0x02
+    ACCELERATION = 0x01
+    ANGLE = 0x02
+    ANGULAR_VELOCITY = 0x03
+    DURATION = 0x07
+    ELECTRIC_CURRENT = 0x09
+    ELECTRIC_POTENTIAL_DIFFERENCE = 0x0a
+    ENERGY = 0x0c
+    ENERGY_EFFICIENCY = 0x0d
+    FREQUENCY = 0x0e
+    FUEL_EFFICIENCY = 0x0f
+    ILLUMINANCE = 0x11
+    LENGTH = 0x12
+    POWER = 0x14
+    PRESSURE = 0x15
+    SPEED = 0x16
+    TEMPERATURE = 0x17
+    TORQUE = 0x18
+    VOLUME = 0x19
 

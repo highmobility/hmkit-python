@@ -31,6 +31,9 @@ import hmkit.autoapi
 from hmkit.autoapi.identifiers import Identifiers
 import hmkit.autoapi.msg_type
 from ..properties import hmproperty
+from ..properties import DataMeasurementUnit
+from ..properties.value import MeasurementType, CurrentType
+from ..properties.value.unit_type import ElectricCurrentUnit
 from enum import Enum, unique
 import logging
 
@@ -41,23 +44,36 @@ class SetHomeChargeCurrent(command_with_properties.CommandWithProperties):
     Constructs HomeCharge SetCharge Current message bytes
     """
     CHARGE_CURRENT = 0x0e
+    CURRENT_TYPE = 0x1b # TODO: update the fixed value
 
-    def __init__(self, current):
+    def __init__(self, current, current_unit, current_type):
         """
         Constructs HomeCharge SetCharge Current message bytes and constructs Instance
 
-        :param float current:
+        :param double current:
+        :param float current_unit: Enum class:`properties.value.unit_type.ElectricCurrentUnit`
+        :param enum current_type: Enum class:`properties.value.current_type.CurrentType`
         """
         log.debug(" ")
         self.msg_type = msg_type.MsgType(Identifiers.HOME_CHARGER, 0x01)
         super().__init__(None, self.msg_type)
 
-        if current is not None:
-            self.propblock = hmproperty.HmProperty(None, SetHomeChargeCurrent.CHARGE_CURRENT, current, None, None)
-            super().create_bytes(self.propblock)
+        self.propcurr = None
+        self.propcurrtype = None
+
+        properties = []
+        if current is not None and isinstance(current_unit, ElectricCurrentUnit):
+            data_unit = DataMeasurementUnit(measurement_type=MeasurementType.ELECTRIC_CURRENT, unit_type=current_unit, data_value=current)
+            self.propcurr = hmproperty.HmProperty(None, SetHomeChargeCurrent.CHARGE_CURRENT, data_unit, None, None)
+            properties.append(self.propcurr)
         else:
             log.error("invalid argument type")
 
+        if isinstance(current_type, CurrentType):
+            self.propcurrtype = hmproperty.HmProperty(None, SetHomeChargeCurrent.CURRENT_TYPE, current_type, None, None)
+            properties.append(self.propcurrtype)
+        else:
+            log.error("invalid argument type")
+
+        super().create_bytes(properties)
         return
-
-

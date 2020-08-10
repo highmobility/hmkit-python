@@ -30,6 +30,7 @@ import struct
 import codecs
 from ..value.double_hm import DoubleHm
 from .. import propertyvalue_object
+from .. import DataUnit
 import logging
 
 log = logging.getLogger('hmkit.autoapi')
@@ -126,6 +127,10 @@ class PropertyComponentValue(PropertyComponent):
             log.debug("timestamp int: " + str(timestamp_int) + " type: " + str(type(timestamp_int))) 
             outbytes = timestamp_int.to_bytes(8, byteorder='big')
             log.debug("timestamp bytes: " + str(outbytes) )
+        elif isinstance(value, DataUnit):
+            # value with measurement and unit codes
+            log.debug("DataUnit bytes: " + str(outbytes) )
+            outbytes = value.get_bytes()
         elif isinstance(value, propertyvalue_object.PropertyValueObject):
             log.debug("PropertyValueObject instance()")
             outbytes = value.get_valuebytes()

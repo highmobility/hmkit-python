@@ -24,7 +24,7 @@ THE SOFTWARE.
 from .charge_mode import ChargeMode
 from .charge_port_state import ChargePortState
 from .charge_timer import ChargingTimer, TimerType
-from .charging_state import ChargingState
+from .charging_status import ChargingStatus
 from .departure_time import DepartureTime
 from .plug_type import PlugType
 from .reduction_time import ReductionTime

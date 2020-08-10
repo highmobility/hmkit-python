@@ -42,21 +42,13 @@ from hmkit.autoapi.commands import SetHomeChargeCurrent, ActivateHomeChargerSola
 from hmkit.autoapi.commands import GetTrunkState, TrunkState, ControlTrunk
 from hmkit.autoapi.properties.value.lock import Lock
 from hmkit.autoapi.properties.value.position import Position
-from hmkit.autoapi.properties.value.charging import ChargeMode
-from hmkit.autoapi.properties.value.charging import ChargingTimer, TimerType
-from hmkit.autoapi.properties.value.charging import ChargePortState
-from hmkit.autoapi.properties.value.charging import ReductionTime
-from hmkit.autoapi.properties.value import ActionItem
-from hmkit.autoapi.properties.value import StartStop
-from hmkit.autoapi.properties.value import PricingType
+from hmkit.autoapi.properties.value.charging import ChargeMode, ChargingTimer, TimerType, ChargePortState, ReductionTime
+from hmkit.autoapi.properties.value import ActionItem, StartStop, PricingType
 from hmkit.autoapi.commands import SetReductionChargingCurrentTimes
-from hmkit.autoapi.properties import PermissionLocation, PermissionType
-from hmkit.autoapi.properties import Permissions
-from hmkit.autoapi.properties import BitLocation
-from hmkit.autoapi.properties import HomeChargeTariff
-from hmkit.autoapi import Identifiers
-from hmkit.autoapi import msg_type
-
+from hmkit.autoapi.properties import PermissionLocation, PermissionType, Permissions, BitLocation, HomeChargeTariff
+from hmkit.autoapi import Identifiers, msg_type
+from hmkit.autoapi.properties.value.unit_type import *
+from hmkit.autoapi.properties.values_with_unit import *
 
 import logging
 
@@ -300,7 +292,7 @@ class cmdline():
         elif inp == 28:
             constructed_bytes = ControlGasFlap(Lock.UNLOCKED, Position.OPEN).get_bytearray()
         elif inp == 29:
-            constructed_bytes = SendHeartRate(90).get_bytearray()
+            constructed_bytes = SendHeartRate(HeartRate(90, FrequencyType.HERTZ)).get_bytearray()
         elif inp == 30:
             constructed_bytes = GetHomeChargerState().get_bytearray()
         elif inp == 31:
